@@ -54,11 +54,9 @@
   <div id = "vis"></div>
 
   <script>
-    function PrintGraph(){
-      const spec = "Graphv2_1.json";
-    	vega.embed('#vis', spec);
+    const spec = "Graphv2_1.json";
+    vega.embed('#vis', spec);
 
-    }
 
   </script>
 
@@ -81,7 +79,7 @@
     }
 
   </script>
-  <button type="button" onclick="PrintGraph()">Graph Selected Value</button>
+  <button type="button" onclick="GetSelectedValue()">Graph Selected Value</button>
 
   <!-- <button type="button" onclick="GetSelectedText()">Get Selected Text</button> -->
 
