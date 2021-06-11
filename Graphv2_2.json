@@ -48,7 +48,7 @@
   "projections": [
     {
       "name": "indicators",
-      "type": {"signal":"indicators"},
+      "indicators": {"signal":"indicators"},
       "scale": 1000,
       "translate": [{"signal": "width / 2"}, {"signal": "height / 2"}]
     }
