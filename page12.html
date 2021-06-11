@@ -51,6 +51,19 @@
 
   <script src="https://d3js.org/d3.v4.min.js"></script>
 
+  <div id = "vis"></div>
+
+  <script>
+    function PrintGraph(){
+      const spec = "Graphv2_1.json";
+    	vega.embed('#vis', spec);
+
+    }
+
+  </script>
+
+
+
   <script type="text/javascript">
     var outerWidth = 'Javascript is working';
     document.write(outerWidth);
@@ -59,10 +72,7 @@
       var e = document.getElementById("Indicator");
       var result = e.options[e.selectedIndex].value;
       document.getElementById("result").innerHTML = result;
-
-      const spec = "Graphv2_1.json";
-    	vega.embed('#vis', spec);
-
+      PrintGraph();
     }
     function GetSelectedText(){
       var e = document.getElementById("Indicator");
