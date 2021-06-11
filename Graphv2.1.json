@@ -34,7 +34,7 @@
     {
       "name": "projection",
       "type": "albersUsa",
-      "scale": 20000,
+      "scale": 1000,
       "translate": [{"signal": "width / 2"}, {"signal": "height / 2"}]
     }
   ],
@@ -58,7 +58,7 @@
       "from": {"data": "areas"},
       "encode": {
         "enter": {
-          "size": {"value": 16},
+          "size": {"value": 2000},
           "fill": {"value": "steelblue"},
           "fillOpacity": {"value": 0.8},
           "stroke": {"value": "white"},
