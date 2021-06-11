@@ -59,73 +59,44 @@
 { "state": "FL", "value": 0.314296171, "row": 8, "col": 10 }
     ]
   },
-  "layer": [
-    {
-      "mark": "rect",
-      "encoding": {
-        "x": {
-          "field": "col",
-          "type": "ordinal",
-          "axis": false
-        },
-        "y": {
-          "field": "row",
-          "type": "ordinal",
-          "axis": false
-        },
-        "color": {
-          "aggregate": "sum",
-          "field": "value",
-          "type": "quantitative",
-          "scale": {
-            "nice": true,
-            "zero": true,
-            "range": [
-              "#eee",
-              "#1f77b4"
-            ]
-          },
-          "legend": false
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "calculate": "round(1-datum.value)",
-          "as": "textcolor"
-        }
-      ],
-      "mark": "text",
-      "encoding": {
-        "x": {
-          "field": "col",
-          "type": "ordinal",
-          "axis": false
-        },
-        "y": {
-          "field": "row",
-          "type": "ordinal",
-          "axis": false
-        },
-        "color": {
-          "field": "textcolor",
-          "type": "quantitative",
-          "legend": false
-        },
-        "text": {
-          "field": "state",
-          "type": "nominal"
-        }
-      }
-    }
-  ],
-  "config": {
-    "overlay": {
-      "rect": true
-    },
-    "text" : {
-      "baseline" : "middle"
-    }
-  }
-}
+
+  "projections": [
+     {
+       "name": "projection",
+       "type": "albersUsa"
+     }
+   ],
+
+   "scales": [
+     {
+       "name": "color",
+       "type": "quantize",
+       "domain": [0, 0.15],
+       "range": {"scheme": "blues", "count": 7}
+     }
+   ],
+
+   "legends": [
+     {
+       "fill": "color",
+       "orient": "bottom-right",
+       "title": "Unemployment",
+       "format": "0.1%"
+     }
+   ],
+
+   "marks": [
+     {
+       "type": "shape",
+       "from": {"data": "counties"},
+       "encode": {
+         "enter": { "tooltip": {"signal": "format(datum.rate, '0.1%')"}},
+         "update": { "fill": {"scale": "color", "field": "rate"} },
+         "hover": { "fill": {"value": "red"} }
+       },
+       "transform": [
+         { "type": "geoshape", "projection": "projection" }
+       ]
+     }
+   ]
+ }
