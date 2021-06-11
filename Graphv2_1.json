@@ -58,7 +58,7 @@
       "from": {"data": "areas"},
       "encode": {
         "enter": {
-          "size": {"value": 2000},
+          "size": {"value": 1000},
           "fill": {"value": "steelblue"},
           "fillOpacity": {"value": 0.8},
           "stroke": {"value": "white"},
@@ -69,7 +69,7 @@
           "y": {"field": "y"}
         }
       }
-      
+
     }
   ]
 }
