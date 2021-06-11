@@ -4,8 +4,9 @@
   "width": 960,
   "height": 500,
   "autosize": "none",
-  "data": {
-    "values": [
+
+  "data": [
+    {"values": [
 { "state": "AK", "value": 0.898315822, "row": 1, "col": 1 },
 { "state": "ME", "value": 0.918937779, "row": 1, "col": 12 },
 { "state": "VT", "value": 0.329645860, "row": 2, "col": 11 },
@@ -58,45 +59,47 @@
 { "state": "TX", "value": 0.178867991, "row": 8, "col": 5 },
 { "state": "FL", "value": 0.314296171, "row": 8, "col": 10 }
     ]
-  },
+  }
+
+  ],
 
   "projections": [
-     {
-       "name": "projection",
-       "type": "albersUsa"
-     }
-   ],
+    {
+      "name": "projection",
+      "type": "albersUsa"
+    }
+  ],
 
-   "scales": [
-     {
-       "name": "color",
-       "type": "quantize",
-       "domain": [0, 0.15],
-       "range": {"scheme": "blues", "count": 7}
-     }
-   ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "quantize",
+      "domain": [0, 0.15],
+      "range": {"scheme": "blues", "count": 7}
+    }
+  ],
 
-   "legends": [
-     {
-       "fill": "color",
-       "orient": "bottom-right",
-       "title": "Unemployment",
-       "format": "0.1%"
-     }
-   ],
+  "legends": [
+    {
+      "fill": "color",
+      "orient": "bottom-right",
+      "title": "Unemployment",
+      "format": "0.1%"
+    }
+  ],
 
-   "marks": [
-     {
-       "type": "shape",
-       "from": {"data": "counties"},
-       "encode": {
-         "enter": { "tooltip": {"signal": "format(datum.rate, '0.1%')"}},
-         "update": { "fill": {"scale": "color", "field": "rate"} },
-         "hover": { "fill": {"value": "red"} }
-       },
-       "transform": [
-         { "type": "geoshape", "projection": "projection" }
-       ]
-     }
-   ]
- }
+  "marks": [
+    {
+      "type": "shape",
+      "from": {"data": "counties"},
+      "encode": {
+        "enter": { "tooltip": {"signal": "format(datum.rate, '0.1%')"}},
+        "update": { "fill": {"scale": "color", "field": "rate"} },
+        "hover": { "fill": {"value": "red"} }
+      },
+      "transform": [
+        { "type": "geoshape", "projection": "projection" }
+      ]
+    }
+  ]
+}
