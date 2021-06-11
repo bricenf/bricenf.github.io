@@ -13,7 +13,7 @@
     },
     {
       "name": "counties",
-      "url": "data/us-10m.json",
+      "url": "us-10m.json",
       "format": {"type": "topojson", "feature": "counties"},
       "transform": [
         { "type": "lookup", "from": "unemp", "key": "id", "fields": ["id"], "values": ["rate"] },
