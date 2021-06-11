@@ -1,14 +1,50 @@
-<head>
-    <title>Vega COVID-19 Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
-</head>
-<style></style>
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+  .bar {
+    fill: steelblue;
+  }
+
+  .bar:hover {
+    fill: brown;
+  }
+
+  .axis text {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
 <body>
-    <h1>COVID-19 Dashboard</h1>
-    <script type="text/python">
-      print("Python working")
-    </script>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" id="defaultInput" value="default" href="#">data1.json</a>
+      <a class="dropdown-item" id="updateInput" value="post" href="#">data2.json</a>
+    </div>
+  </div>
+  <svg id="d3newbie-chart" width="600" height="400">
+  </svg>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <script type="text/javascript">
+
+    testing = "yay, this works! in javascript";
+
+    console.log(testing);
+
+
+  </script>
 </body>
