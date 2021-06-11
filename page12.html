@@ -26,22 +26,37 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
 <body>
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" id="defaultInput" value="default" href="#">data1.json</a>
-      <a class="dropdown-item" id="updateInput" value="post" href="#">data2.json</a>
-    </div>
-  </div>
-  <svg id="d3newbie-chart" width="600" height="400">
-  </svg>
+  <select id="Indicator">
+        <option value="None">-- Select --</option>
+        <option value="1">Population Density</option>
+        <option value="2" selected>Population</option>
+        <option value="3">Household, Average Size</option>
+        <option value="4" selected>Families, Married</option>
+        <option value="5" selected>Other Families, Male Householder, No Wife Present</option>
+        <option value="6" selected>Other Families, Female Householder, No Husband Present</option>
+        <option value="7" selected>% Family Population</option>
+        <option value="8" selected>% Population, Male</option>
+        <option value="9" selected>% Population, Female</option>
+        <option value="10" selected>% White Population, Alone</option>
+        <option value="11" selected>% Black Population, Alone</option>
+        <option value="12" selected>% Asian Population, Alone</option>
+        <option value="13" selected>% American Indian and Alaska Native Population, Alone</option>
+        <option value="14" selected>% Other Race Population, Alone</option>
+        <option value="15" selected>% Other Race Population, Alone</option>
+        <option value="16" selected>% Two or More Races Population</option>
+
+
+    </select>
+
   <script src="https://d3js.org/d3.v4.min.js"></script>
 
   <script type="text/javascript">
     var outerWidth = 'Javascript is working';
     document.write(outerWidth);
+
+    var e = document.getElementById("Indicator");
+    var result = e.options[e.selectedIndex].value;
+    alert(result); //ID002
 
   </script>
 </body>
