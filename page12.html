@@ -59,8 +59,9 @@
       var e = document.getElementById("Indicator");
       var result = e.options[e.selectedIndex].value;
       document.getElementById("result").innerHTML = result;
-      const spec = "WatsonGraphV3.json";
-    	vega.embed('#vis', spec); 
+
+      const spec = "Graphv2_1.json";
+    	vega.embed('#vis', spec);
 
     }
     function GetSelectedText(){
