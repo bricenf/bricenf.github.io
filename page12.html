@@ -26,7 +26,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
 <body>
-  <p id="result">-- Select --</p>
+
   <select id="Indicator">
         <option value="None">-- Select --</option>
         <option value="1">Population Density</option>
@@ -59,6 +59,9 @@
       var e = document.getElementById("Indicator");
       var result = e.options[e.selectedIndex].value;
       document.getElementById("result").innerHTML = result;
+      const spec = "WatsonGraphV3.json";
+    	vega.embed('#vis', spec); 
+
     }
     function GetSelectedText(){
       var e = document.getElementById("Indicator");
@@ -67,7 +70,10 @@
     }
 
   </script>
-  <button type="button" onclick="GetSelectedValue()">Get Selected Value</button>
-  <button type="button" onclick="GetSelectedText()">Get Selected Text</button>
+  <button type="button" onclick="GetSelectedValue()">Graph Selected Value</button>
+
+  <!-- <button type="button" onclick="GetSelectedText()">Get Selected Text</button> -->
+
+  <p id="result">-- Selected --</p>
 
 </body>
