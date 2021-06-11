@@ -3,7 +3,7 @@
   "data": [
     {
       "name": "states",
-      "url": "data/us-10m.json",
+      "url": "data/world-10m.json",
       "format": {"type": "topojson", "feature": "states"},
       "transform": [
         {
