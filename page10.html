@@ -1,0 +1,34 @@
+<head>
+    <title>Vega COVID-19 Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
+</head>
+<style></style>
+
+<body>
+    <h1>COVID-19 Dashboard</h1>
+    <hr>
+    <div id="view"></div>
+    <div id="viewControl"></div>
+    <script>
+        var view;
+        function render(spec) {
+            var runtime = vega.parse(spec);
+            var handler = new vegaTooltip.Handler({
+                'theme': 'dark'
+            });
+            view = new vega.View(runtime, {
+                renderer: 'svg',
+                container: '#view',
+                hover: true
+            })
+                .tooltip(handler.call)
+                .initialize(document.getElementById("view"))
+                .run();
+            return view.runAsync();
+        }
+        var spec = {};
+        render(spec);
+    </script>
+</body>
