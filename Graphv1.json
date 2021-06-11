@@ -60,7 +60,7 @@
     },
     {
       "type": "symbol",
-      "from": {"data": "airports"},
+      "from": {"data": "areas"},
       "encode": {
         "enter": {
           "size": {"value": 16},
