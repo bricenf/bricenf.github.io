@@ -18,8 +18,8 @@
       ]
     },
     {
-      "name": "airports",
-      "url": "data/airports.csv",
+      "name": "areas",
+      "url": "data/areas.csv",
       "format": {"type": "csv", "parse": "auto"},
       "transform": [
         {
@@ -60,10 +60,10 @@
     },
     {
       "type": "symbol",
-      "from": {"data": "airports"},
+      "from": {"data": "areas"},
       "encode": {
         "enter": {
-          "size": {"value": 16},
+          "size": {"value": 50},
           "fill": {"value": "steelblue"},
           "fillOpacity": {"value": 0.8},
           "stroke": {"value": "white"},
