@@ -42,7 +42,7 @@
   "marks": [
     {
       "type": "path",
-      "from": {"data": "states"},
+      "from": {"data": "world"},
       "encode": {
         "enter": {
           "fill": {"value": "#dedede"},
