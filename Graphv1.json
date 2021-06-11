@@ -16,6 +16,22 @@
           "projection": "projection"
         }
       ]
+    },
+    {
+      "name": "areas",
+      "url": "data/areas.csv",
+      "format": {"type": "csv", "parse": "auto"},
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["longitude", "latitude"]
+        },
+        {
+          "type": "filter",
+          "expr": "datum.x != null && datum.y != null"
+        }
+      ]
     }
   ],
 
@@ -39,6 +55,23 @@
         },
         "update": {
           "path": {"field": "path"}
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": {"data": "airports"},
+      "encode": {
+        "enter": {
+          "size": {"value": 16},
+          "fill": {"value": "steelblue"},
+          "fillOpacity": {"value": 0.8},
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 1.5}
+        },
+        "update": {
+          "x": {"field": "x"},
+          "y": {"field": "y"}
         }
       }
     }
