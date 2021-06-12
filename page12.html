@@ -34,14 +34,18 @@
 
   <div id = "vis"></div>
 
+  <script type="text/javascript">
+  var outerWidth = 'Javascript is working';
+  document.write(outerWidth);
+  </script>
+
+
 
   <script type="text/javascript">
 
     const spec = "Graphv2_1.json";
     vega.embed('#vis', spec);
 
-    var outerWidth = 'Javascript is working';
-    document.innerHTML(outerWidth);
 
     function GetSelectedValue(){
       var e = document.getElementById("Indicator");
