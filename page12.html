@@ -108,16 +108,16 @@ body {
 
   <script type="text/javascript">
 
-    function GetSelectedValue(){
-      var e = document.getElementById("Indicator");
-      var result = e.options[e.selectedIndex].text;
-      document.getElementById("result").innerHTML = result;
-    }
-    function GetSelectedText(){
-      var e = document.getElementById("Indicator");
-      var result = e.options[e.selectedIndex].value;
-      document.getElementById("result").innerHTML = result;
-    }
+  function GetSelectedValue(){
+    var e = document.getElementById("Indicator");
+    var result = e.options[e.selectedIndex].value;
+    document.getElementById("result").innerHTML = result;
+  }
+  function GetSelectedText(){
+    var e = document.getElementById("Indicator");
+    var result = e.options[e.selectedIndex].text;
+    document.getElementById("result").innerHTML = result;
+  }
 
   </script>
   <button type="button" onclick="GetSelectedValue()">Graph Selected Value</button>
