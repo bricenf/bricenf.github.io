@@ -34,7 +34,7 @@
       "mark": {"type": "circle"},
       "data": {"url": "data/AreasAllDataUntransposed.csv"},
       "transform": [
-        {"aggregate": [{"op": "Total Population	", "as": "PERCENTCHANGETHATCHANGESSIZE"},
+        {"aggregate": [{"op": "Total Population", "as": "PERCENTCHANGETHATCHANGESSIZE"},
         {
           "lookup": "Name of Area",
           "from": {
