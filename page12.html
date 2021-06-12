@@ -110,9 +110,7 @@ body {
 
     function GetSelectedValue(){
       var e = document.getElementById("Indicator");
-      var result = e.options[e.selectedIndex].value;
-      //var printResult = "The percent change in " + result + "across the RCC portfolio of U.S. cities from 2020 to 2025";
-      //document.getElementById("result").innerHTML = printResult;
+      var result = e.options[e.selectedIndex].text;
       document.getElementById("result").innerHTML = result;
     }
     function GetSelectedText(){
