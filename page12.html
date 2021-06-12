@@ -111,10 +111,16 @@ body {
   <script src="https://d3js.org/d3.v4.min.js"></script>
 
   <script type="text/javascript">
+
+  </script>
+
+  <script type="text/javascript">
   function GetSelectedValue(){
     var e = document.getElementById("Indicator");
-    var result = e.options[e.selectedIndex].value;
-    document.getElementById("result").innerHTML = result;
+    var result_value = e.options[e.selectedIndex].value;
+    var result_text = e.options[e.selectedIndex].text;
+    document.getElementById("result_value").innerHTML = result_value;
+    document.getElementById("result_text").innerHTML = result_text;
   }
   function GetSelectedText(){
     var e = document.getElementById("Indicator");
@@ -129,7 +135,7 @@ body {
 
   <button type="button" onclick="GetSelectedValue()">Graph Selected Value</button>
 
-  <p id = "result">Selected Indicator </p>
+  <p id = "result_text">Selected Indicator </p>
 
 
   <!-- <button type="button" onclick="GetSelectedText()">Get Selected Text</button> -->
