@@ -58,7 +58,7 @@
 
     const spec = "Graphv2_1.json";
     vega.embed('#vis', spec);
-    
+
     var outerWidth = 'Javascript is working';
     document.write(outerWidth);
 
@@ -66,7 +66,6 @@
       var e = document.getElementById("Indicator");
       var result = e.options[e.selectedIndex].value;
       document.getElementById("result").innerHTML = result;
-      PrintGraph();
     }
     function GetSelectedText(){
       var e = document.getElementById("Indicator");
