@@ -32,15 +32,15 @@
 
     {
       "mark": {"type": "circle"},
-      "data": {"url": "data/AreasAllData.csv"},
+      "data": {"url": "data/AreasAllDataUntransposed.csv"},
       "transform": [
-        {"aggregate": [{"op": "count", "as": "routes"}], "groupby": ["origin"]},
+        {"aggregate": [{"op": "Total Population	", "as": "PERCENTCHANGETHATCHANGESSIZE"},
         {
-          "lookup": "origin",
+          "lookup": "Name of Area",
           "from": {
-            "data": {"url": "data/airports.csv"},
+            "data": {"url": "data/areas.csv"},
             "key": "iata",
-            "fields": ["state", "latitude", "longitude"]
+            "fields": ["area", "latitude", "longitude"]
           }
         }
       }
