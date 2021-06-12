@@ -110,7 +110,9 @@ body {
 
     function GetSelectedValue(){
       var e = document.getElementById("Indicator");
-      window.results = e.options[e.selectedIndex].text;
+      var result = e.options[e.selectedIndex].text;
+      var printResult = "The percent change in " + result + "across the RCC portfolio of U.S. cities from 2020 to 2025";
+      document.getElementById("result").innerHTML = printResult;
       //document.getElementById("result").innerHTML = result;
     }
     function GetSelectedText(){
@@ -125,10 +127,6 @@ body {
   <!-- <button type="button" onclick="GetSelectedText()">Get Selected Text</button> -->
 
 
-  <script type = "text/javascript">
-  printResult = "The percent change in " + results + "across the RCC portfolio of U.S. cities from 2020 to 2025";
-  document.getElementById("result").innerHTML = printResult;
-  </script>
 
 
   <div id = "bottom">
