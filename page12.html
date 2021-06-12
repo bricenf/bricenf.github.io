@@ -35,8 +35,6 @@
 
   <script src="https://d3js.org/d3.v4.min.js"></script>
 
-  <div id = "vis"></div>
-
   <script type="text/javascript">
 
     function GetSelectedValue(){
@@ -57,10 +55,12 @@
 
   <p id="result">-- Selected --</p>
 
-  <script type="text/javascript">
-
+  <div style="padding-left:20px">
+    <div id="vis"></div>
+    <script type="text/javascript">
     const spec = "Graphv2_1.json";
     vega.embed('#vis', spec);
     </script>
+  </div>
 
 </body>
