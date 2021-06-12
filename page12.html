@@ -117,8 +117,9 @@ body {
   <script type="text/javascript">
   function GetSelectedValue(){
     var e = document.getElementById("Indicator");
-    var result = e.options[e.selectedIndex].value;
-    document.getElementById("result").innerHTML = result;
+    var result_value = e.options[e.selectedIndex].value;
+    var result_text = e.options[e.selectedIndex].text;
+    document.getElementById("result").innerHTML = result_text;
   }
   function GetSelectedText(){
     var e = document.getElementById("Indicator");
@@ -139,7 +140,7 @@ body {
 
     <h4 id = "result" style="display: inline-block">Selected Indicator </h4>
 
-    <h4 style="display: inline-block"> in RCC portfolio areas from 2020 to 2025 </h4>
+    <h4 style="display: inline-block"> in the RCC portfolio areas from 2020 to 2025 </h4>
 
 
   </div>
