@@ -8,6 +8,11 @@
 
 <body>
 
+  <script type="text/javascript">
+  var outerWidth = 'Javascript is working';
+  document.write(outerWidth);
+  </script>
+
   <select id="Indicator">
         <option value="None">-- Select --</option>
         <option value="1">Population Density</option>
@@ -26,8 +31,6 @@
         <option value="14" selected>% Other Race Population, Alone</option>
         <option value="15" selected>% Other Race Population, Alone</option>
         <option value="16" selected>% Two or More Races Population</option>
-
-
     </select>
 
   <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -35,17 +38,6 @@
   <div id = "vis"></div>
 
   <script type="text/javascript">
-  var outerWidth = 'Javascript is working';
-  document.write(outerWidth);
-  </script>
-
-
-
-  <script type="text/javascript">
-
-    const spec = "Graphv2_1.json";
-    vega.embed('#vis', spec);
-
 
     function GetSelectedValue(){
       var e = document.getElementById("Indicator");
@@ -64,5 +56,11 @@
   <!-- <button type="button" onclick="GetSelectedText()">Get Selected Text</button> -->
 
   <p id="result">-- Selected --</p>
+
+  <script type="text/javascript">
+
+    const spec = "Graphv2_1.json";
+    vega.embed('#vis', spec);
+    </script>
 
 </body>
