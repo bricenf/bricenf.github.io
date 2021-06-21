@@ -41,11 +41,63 @@
 <script>
 var cities = L.layerGroup();
 var TestingOverlays = L.layerGroup();
+var Private = L.layerGroup();
+var Non_Profit = L.layerGroup();
+var Public = L.layerGroup();
 
 L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities),
 L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities),
 L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.').addTo(cities),
 L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(TestingOverlays);
+
+
+
+
+L.marker([41.2967024639823, -72.9194480016161]).bindPopup('Pirelli Building Adaptive Reuse Hotel Development').addTo(Private);
+L.marker([41.298965188797325, -72.91235760881847]).bindPopup('Sports Haven Development Site').addTo(Private);
+L.marker([41.29201825457482, -72.92362130326667]).bindPopup('Assa Abloy / Parking Lot Site').addTo(Private);
+L.marker([41.29369348270747, -72.92062184428232]).bindPopup('Food Terminal Site').addTo(Private);
+L.marker([41.297815547944396, -72.91283488923587]).bindPopup('Fusco Long Wharf Development').addTo(Private);
+L.marker([41.30187531219364, -72.93500459520187]).bindPopup('Medical Office Building - Structured Parking garage').addTo(Private);
+L.marker([41.29622227251237, -72.92356453580365]).bindPopup('Hummel').addTo(Private);
+L.marker([41.299270275517266, -72.9117522805206]).bindPopup('Sport-Tech (Criterian)').addTo(Private);
+
+
+L.marker([41.29509082173437, -72.94651455299763]).bindPopup('Columbus House').addTo(Non_Profit);
+L.marker([41.29326755591919, -72.92275610322483]).bindPopup('Community Health Center').addTo(Non_Profit);
+L.marker([41.302077009238545, -72.93518277998258]).bindPopup('Yale New Haven Health').addTo(Non_Profit);
+L.marker([41.29703169973654, -72.91405847998271]).bindPopup('Canal Dock Inc').addTo(Non_Profit);
+L.marker([41.29427410147547, -72.9223715437443]).bindPopup('Long Wharf Theater').addTo(Non_Profit);
+L.marker([41.28535574390121, -72.92574608869832]).bindPopup('Long Wharf Preserve (Gather New Haven)').addTo(Non_Profit);
+
+L.marker([41.30544053855863, -72.92118008507308]).bindPopup('ROW-Raising Road').addTo(Public);
+L.marker([41.29797547777189, -72.91129934194822]).bindPopup('Long Wharf Responsible Growth Plan').addTo(Public);
+L.marker([41.297991291506484, -72.92338154415569]).bindPopup('Long Wharf Rezone and Resiliency Zone overlay').addTo(Public);
+L.marker([41.297991291506484, -72.92338154415569]).bindPopup('Flood Study (CDBG-DR Funded)').addTo(Public);
+L.marker([41.2819600590663, -72.92857992416218]).bindPopup('Sound School').addTo(Public);
+L.marker([41.33611641571924, -72.94744037986325]).bindPopup('CSCU Site').addTo(Public);
+L.marker([41.293784607160156, -72.91769532046052]).bindPopup('Long Wharf Park').addTo(Public);
+L.marker([41.29143775125977, -72.92067268183352]).bindPopup('Food Truck Paradise').addTo(Public);
+L.marker([41.29697527581732, -72.91396192046044]).bindPopup('Canal Dock Boathouse').addTo(Public);
+L.marker([41.32369560600809, -72.93064308458632]).bindPopup('Farmington Canal').addTo(Public);
+L.marker([41.31770231197603, -72.9221714402428]).bindPopup('Vehicular Wayfinding System').addTo(Public);
+L.marker([41.31770231197603, -72.9221714402428]).bindPopup('Linear Storm Water Park + Loop Road').addTo(Public);
+L.marker([41.297703590935456, -72.91217359347522]).bindPopup('Long Wharf Slow Street Network').addTo(Public);
+L.marker([41.32369560600809, -72.93064308458632]).bindPopup('Downtown Green Infrastructure (bioswale and filtration system)').addTo(Public);
+L.marker([41.32369560600809, -72.93064308458632]).bindPopup('Storm Tunnel & Storm Water Modeling').addTo(Public);
+L.marker([41.32369560600809, -72.93064308458632]).bindPopup('USACE Flood Wall and Integrated Pump Station').addTo(Public);
+L.marker([41.27455842917376, -72.86473440800093]).bindPopup('Living Shoreline (Long Wharf)').addTo(Public);
+L.marker([41.30561784769485, -72.93613608218934]).bindPopup('Coastal AE Zone Designation-ReMapping').addTo(Public);
+L.marker([41.30894730433298, -72.92926231296518]).bindPopup('State DOT “pile of dirt” Site / “taco bell” site').addTo(Public);
+L.marker([41.29843059653815, -72.92633226834072]).bindPopup('Union Station - Redevelopment of East-West lot').addTo(Public);
+L.marker([41.297759927452205, -72.9232568943383]).bindPopup('DOT Rail Facilites').addTo(Public);
+L.marker([41.30114440667637, -72.91941895628264]).bindPopup('Post Office').addTo(Public);
+L.marker([41.29840517207124, -72.91225933329491]).bindPopup('Long Wharf District Governance / Finance Authority').addTo(Public);
+L.marker([41.28244198155537, -72.93801612554729]).bindPopup('Kimberly Avenue Aquisition (harbor access pt)').addTo(Public);
+L.marker([41.30179053277627, -72.93628462854805]).bindPopup('The Havens Mall').addTo(Public);
+
+
+
 
 
 var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
@@ -68,7 +120,10 @@ var baseLayers = {
 
 var overlays = {
   "Cities": cities,
-  "Tetsting Overlays": TestingOverlays
+  "Tetsting Overlays": TestingOverlays,
+  "Private": Private,
+  "Non Profit": Non_Profit,
+  "Public":Public
 };
 
 L.control.layers(baseLayers, overlays).addTo(map);
