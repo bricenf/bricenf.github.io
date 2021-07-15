@@ -23,7 +23,7 @@ document.getElementById("myDate").innerHTML = dateTime;
 
 function formatAMPM() {
   var time = new Date();
-  var output = time.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true });
+  var output = time.toLocaleString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true });
   document.getElementById("myDate").innerHTML = output;
 }
 
