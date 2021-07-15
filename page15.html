@@ -11,16 +11,6 @@
 
 <script>
 
-function getTime(){
-var today = new Date();
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-
-var dateTime = date+' '+time;
-
-document.getElementById("myDate").innerHTML = dateTime;
-}
-
 function formatAMPM() {
   var time = new Date();
   var output = time.toLocaleString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true });
@@ -39,28 +29,19 @@ function formatAMPM() {
 
 <script>
 
-import com.google.api.services.calendar.Calendar;
-import com.google.api.services.calendar.model.Event;
-import com.google.api.services.calendar.model.Events;
+funtion getCalendarEvents() {
+  var mycal = "bricenwfisher@gmail.com";
+  var cal = CalendarApp.getCalendarById(mycal);
+  var events = cal.getEvents(new Date("July 14, 2021 00:00:00 CST"), new Date("July 18, 2021 23:59:59 CST"), {search: '-project123'});
+  document.getElementById("myDate").innerHTML = events;
 
-// ...
-
-// Initialize Calendar service with valid OAuth credentials
-Calendar service = new Calendar.Builder(httpTransport, jsonFactory, credentials)
-    .setApplicationName("applicationName").build();
-
-// Iterate over the events in the specified calendar
-String pageToken = null;
-do {
-  Events events = service.events().list('primary').setPageToken(pageToken).execute();
-  List<Event> items = events.getItems();
-  for (Event event : items) {
-    System.out.println(event.getSummary());
-  }
-  pageToken = events.getNextPageToken();
-} while (pageToken != null);
+}
 
 </script>
+
+<body onload = "getCalendarEvents()">
+  <h1>Events:  <span id ="myDate"></span></h1>
+</body>
 
 
     </body>
