@@ -30,9 +30,25 @@ function formatAMPM() {
 <script>
 
 funtion getCalendarEvents() {
+
   var mycal = "bricenwfisher@gmail.com";
   var cal = CalendarApp.getCalendarById(mycal);
-  var events = cal.getEvents(new Date("July 14, 2021 00:00:00 CST"), new Date("July 18, 2021 23:59:59 CST"), {search: '-project123'});
+
+  var events = cal.getEvents(new Date("July 14, 2021 00:00:00 CST"), new Date("July 22, 2021 23:59:59 CST"));
+
+  var header = [["Calendar Address", "Event Title", "Event Description", "Event Location", "Event Start", "Event End", "Calculated Duration", "Visibility", "Date Created", "Last Updated", "MyStatus", "Created By", "All Day Event", "Recurring Event"]]
+
+  for (var i=0;i<events.length;i++) {
+  var row=i+3;
+var myformula_placeholder = '';
+    // Matching the "header=" entry above, this is the detailed row entry "details=", and must match the number of entries of the GetRange entry below
+    // NOTE: I've had problems with the getVisibility for some older events not having a value, so I've had do add in some NULL text to make sure it does not error
+    var details=[[mycal,events[i].getTitle(), events[i].getDescription(), events[i].getLocation(), events[i].getStartTime(), events[i].getEndTime(), myformula_placeholder, ('' + events[i].getVisibility()), events[i].getDateCreated(), events[i].getLastUpdated(), events[i].getMyStatus(), events[i].getCreators(), events[i].isAllDayEvent(), events[i].isRecurringEvent()]];
+    //var range=sheet.getRange(row,1,1,14);
+    var events = setValues(details);
+
+}
+
   document.getElementById("myDate").innerHTML = events;
 
 }
