@@ -65,6 +65,19 @@ var myformula_placeholder = '';
 
 </script>
 
+<!-- https://stackoverflow.com/questions/34123053/auto-refresh-iframe-html -->
+
+<script>
+        window.setInterval(function() {
+            reloadIFrame()
+        }, 3000);
+
+        function reloadIFrame() {
+            console.log('reloading..');
+            document.getElementById('iframe').contentWindow.location.reload();
+        }
+    </script>
+
 
 <!--
 <body onload = "getCalendarEvents()">
