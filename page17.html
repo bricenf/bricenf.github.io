@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en-AU"><head><style>.gm-control-active>img{box-sizing:content-box;display:none;left:50%;pointer-events:none;position:absolute;top:50%;transform:translate(-50%,-50%)}.gm-control-active>img:nth-child(1){display:block}.gm-control-active:hover>img:nth-child(1),.gm-control-active:active>img:nth-child(1){display:none}.gm-control-active:hover>img:nth-child(2),.gm-control-active:active>img:nth-child(3){display:block}
+</style><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400"><style>.gm-ui-hover-effect{opacity:.6}.gm-ui-hover-effect:hover{opacity:1}
+</style><style>.gm-style .gm-style-cc a,.gm-style .gm-style-cc button,.gm-style .gm-style-cc span,.gm-style .gm-style-mtc div{font-size:10px;box-sizing:border-box}
+</style><style>@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style>.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+</style><style>.gm-style img{max-width: none;}.gm-style {font: 400 11px Roboto, Arial, sans-serif; text-decoration: none;}</style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="Expires" content="0">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+  <title>MyFireWatch - Bushfire map information Australia</title>
+  <meta name="description" content="MyFireWatch provides bushfire location information in a quickly accessible form, designed for general public use around Australia.">
+  <meta name="keywords" content="bushfire map australia, wild-fire map, bush-fire information, fire map australia, myfirewatch, my firewatch">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/landgate_icon.png">
+
+  <link rel="stylesheet" href="common/layout.css">
+  <link rel="stylesheet" href="common/nav.css">
+
+  <!--[if lt IE 8]><link rel="stylesheet" href="common/ie7.css" /><![endif]-->
+  <!--[if IE 8]><link rel="stylesheet" href="common/ie8.css" /><![endif]-->
+  <!--[if IE 9]><link rel="stylesheet" href="common/ie9.css" /><![endif]-->
+
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+  .disclaimer {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: #F00;
+    color: #FFF;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 50px;
+    z-index: 1000;
+  }
+    </style>
+<link rel="stylesheet" type="text/css" href="common/openlayers/theme/default/style.css"><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/44/14/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/44/14/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/44/14/map.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/44/14/onion.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/44/14/controls.js"></script></head>
+<body>
+
+<div id="main">
+  <div id="top" style="height: 64px;">
+    <div id="logo"><a href="#" class="close"></a></div> </div>
+      <div id="menu">
+        <ul>
+          <li><a href="about.html" id="about">About</a></li>
+          <li><a href="alerts.html" id="alerts">Incidents &amp; Warnings</a></li>
+          <li><a href="help.html" id="help">How to</a></li>
+          <li><a href="terms.html" id="help">Terms &amp; Conditions</a></li>
+          <li><a href="contact.html" id="contact">Contact</a></li>
+        </ul>
+     </div>
+
+  <div id="map">
+    <div id="mapHolder" style="width: 100%; height: 100%" class="olMap">
+      <a href="disclaimer.html">
+        <div class="disclaimer">Not to be used for the preservation of life or property  <u>View disclaimer</u> .</div>
+      </a>
+      <!--div style="width:100%;height:100%;text-align:center;margin-top:20%"><h1>Due to a system fault, current fire hotspots are not available. </h1></div-->
+      <a href="https://landgate.wa.gov.au">
+        <div id="landgate_logo"></div>
+      </a>
+
+      <div id="customZoom">
+        <a href="#" id="customZoomIn" class="button olButton">+</a>
+        <a href="#" id="customZoomOut" class="button olButton">−</a>
+        <a id="zoomoz" class="button"><img src="img/zoomoz.png" alt="" title="Show all of Australia"></a>
+      </div>
+      <noscript>
+      This website requires Javascript. Sorry about that! <a href="alerts.html">Go to current alerts</a>.
+      </noscript>
+    <div class="olForeignContainer" style="width: 100%; height: 100%; position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" aria-label="Map" aria-roledescription="map" role="group" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 996; transform: matrix(1, 0, 0, 1, -238, -82);"><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 768px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 768px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 768px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 768px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -768px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -768px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -768px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -768px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 1024px; top: -512px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 1024px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 1024px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 1024px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 996; transform: matrix(1, 0, 0, 1, -238, -82);"><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i14!3i9!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=4524" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i13!3i9!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=106994" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i13!3i8!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=64272" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i14!3i8!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=92873" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i15!3i8!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=121474" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i15!3i9!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=33125" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i15!3i10!4i256!2m3!1e0!2sm!3i565291236!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=69782" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i14!3i10!4i256!2m3!1e0!2sm!3i565291236!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=32420" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i13!3i10!4i256!2m3!1e0!2sm!3i565291236!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=126129" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i12!3i10!4i256!2m3!1e0!2sm!3i565291236!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=88767" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i12!3i9!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=78393" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i12!3i8!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=35671" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: -512px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i12!3i7!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=124020" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: -512px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i13!3i7!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=21550" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: -512px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i14!3i7!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=50151" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: -512px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i15!3i7!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=78752" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 768px; top: -512px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i0!3i7!4i256!2m3!1e0!2sm!3i565291236!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=77808" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 768px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i0!3i8!4i256!2m3!1e0!2sm!3i565291236!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=120530" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 768px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i0!3i9!4i256!2m3!1e0!2sm!3i565291236!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=32181" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 768px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i0!3i10!4i256!2m3!1e0!2sm!3i565291236!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=102910" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i11!3i10!4i256!2m3!1e0!2sm!3i565290492!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=72230" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i11!3i9!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=49792" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i11!3i8!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=7070" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: -512px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i11!3i7!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=95419" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 1024px; top: -512px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i1!3i7!4i256!2m3!1e0!2sm!3i565291248!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=95979" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 1024px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i1!3i8!4i256!2m3!1e0!2sm!3i565291236!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=18060" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 1024px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i1!3i9!4i256!2m3!1e0!2sm!3i565291236!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=60782" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 1024px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i1!3i10!4i256!2m3!1e0!2sm!3i565291128!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=75514" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -768px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i10!3i10!4i256!2m3!1e0!2sm!3i565291236!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=14043" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -768px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i10!3i9!4i256!2m3!1e0!2sm!3i565291236!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=68972" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -768px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i10!3i8!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=109540" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -768px; top: -512px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i4!2i10!3i7!4i256!2m3!1e0!2sm!3i565291272!3m17!2sen-US!3sUS!5e18!12m4!1e68!2m2!1sset!2sRoadmap!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjMzfHMuZTpsfHAudjpvZmY!4e0&amp;client=gme-landgate&amp;token=66818" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" tabindex="-1" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;"></iframe><div style="pointer-events: none; width: 100%; height: 100%; box-sizing: border-box; position: absolute; z-index: 1000002; opacity: 0; border: 2px solid rgb(26, 115, 232);"></div><div><div style="width: 100%; height: 100%; z-index: 0; position: absolute; left: 0px; top: 0px;"><div id="OpenLayers_Map_5_OpenLayers_ViewPort" class="olMapViewport olControlDragPanActive olControlZoomBoxActive olControlPinchZoomActive olControlNavigationActive olControlWMSGetFeatureInfoActive olControlMousePositionActive" style="position: relative; overflow: hidden; width: 100%; height: 100%;"><div id="OpenLayers_Map_5_OpenLayers_Container" style="position: absolute; z-index: 749; left: 0px; top: 0px;"><div id="OpenLayers_Layer_WMS_48" dir="ltr" class="olLayerDiv olLayerGridSingleTile" style="position: absolute; width: 100%; height: 100%; z-index: 335; display: none;"></div><div id="OpenLayers_Layer_WMS_40" dir="ltr" class="olLayerDiv olLayerGridSingleTile" style="position: absolute; width: 100%; height: 100%; z-index: 340; display: none;"></div><div id="OpenLayers_Layer_WMS_38" dir="ltr" class="olLayerDiv olLayerGridSingleTile" style="position: absolute; width: 100%; height: 100%; z-index: 345; display: none;"></div><div id="OpenLayers_Layer_WMS_36" dir="ltr" class="olLayerDiv olLayerGridSingleTile" style="position: absolute; width: 100%; height: 100%; z-index: 350; display: none;"></div><div id="OpenLayers_Layer_WMS_46" dir="ltr" class="olLayerDiv olLayerGridSingleTile" style="position: absolute; width: 100%; height: 100%; z-index: 355; display: none;"></div><div id="OpenLayers_Layer_WMS_44" dir="ltr" class="olLayerDiv olLayerGridSingleTile" style="position: absolute; width: 100%; height: 100%; z-index: 360; display: none;"></div><div id="OpenLayers_Layer_WMS_42" dir="ltr" class="olLayerDiv olLayerGridSingleTile" style="position: absolute; width: 100%; height: 100%; z-index: 365; display: none;"></div><div id="OpenLayers_Layer_WMS_34" dir="ltr" class="olLayerDiv olLayerGridSingleTile" style="position: absolute; width: 100%; height: 100%; z-index: 370; display: block;"><img class="olTileImage" src="https://srss-ows-2.landgate.wa.gov.au/mapproxy/myfirewatch/service?LAYERS=layer7_fhs_last_48_72.shp&amp;TRANSPARENT=TRUE&amp;MAXEXTENT=-20037508.34%2C-20037508.34%2C20037508.34%2C20037508.34&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;STYLES=&amp;FORMAT=image%2Fpng&amp;SRS=EPSG%3A900913&amp;BBOX=6762257.4047802,-4308345.3411523,22935109.59522,-2312421.6588477&amp;WIDTH=1653&amp;HEIGHT=204" style="visibility: inherit; opacity: 1; position: absolute; left: 0px; top: 0px; width: 1653px; height: 204px;"></div><div id="OpenLayers_Layer_WMS_32" dir="ltr" class="olLayerDiv olLayerGridSingleTile" style="position: absolute; width: 100%; height: 100%; z-index: 375; display: block;"><img class="olTileImage" src="https://srss-ows-2.landgate.wa.gov.au/mapproxy/myfirewatch/service?LAYERS=layer7_fhs_last_24_48.shp&amp;TRANSPARENT=TRUE&amp;MAXEXTENT=-20037508.34%2C-20037508.34%2C20037508.34%2C20037508.34&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;STYLES=&amp;FORMAT=image%2Fpng&amp;SRS=EPSG%3A900913&amp;BBOX=6762257.4047802,-4308345.3411523,22935109.59522,-2312421.6588477&amp;WIDTH=1653&amp;HEIGHT=204" style="visibility: inherit; opacity: 1; position: absolute; left: 0px; top: 0px; width: 1653px; height: 204px;"></div><div id="OpenLayers_Layer_WMS_30" dir="ltr" class="olLayerDiv olLayerGridSingleTile" style="position: absolute; width: 100%; height: 100%; z-index: 380; display: block;"><img class="olTileImage" src="https://srss-ows-2.landgate.wa.gov.au/mapproxy/myfirewatch/service?LAYERS=layer7_fhs_last_12_24.shp&amp;TRANSPARENT=TRUE&amp;MAXEXTENT=-20037508.34%2C-20037508.34%2C20037508.34%2C20037508.34&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;STYLES=&amp;FORMAT=image%2Fpng&amp;SRS=EPSG%3A900913&amp;BBOX=6762257.4047802,-4308345.3411523,22935109.59522,-2312421.6588477&amp;WIDTH=1653&amp;HEIGHT=204" style="visibility: inherit; opacity: 1; position: absolute; left: 0px; top: 0px; width: 1653px; height: 204px;"></div><div id="OpenLayers_Layer_WMS_28" dir="ltr" class="olLayerDiv olLayerGridSingleTile" style="position: absolute; width: 100%; height: 100%; z-index: 385; display: block;"><img class="olTileImage" src="https://srss-ows-2.landgate.wa.gov.au/mapproxy/myfirewatch/service?LAYERS=layer7_fhs_last_0_12.shp&amp;TRANSPARENT=TRUE&amp;MAXEXTENT=-20037508.34%2C-20037508.34%2C20037508.34%2C20037508.34&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;STYLES=&amp;FORMAT=image%2Fpng&amp;SRS=EPSG%3A900913&amp;BBOX=6762257.4047802,-4308345.3411523,22935109.59522,-2312421.6588477&amp;WIDTH=1653&amp;HEIGHT=204" style="visibility: inherit; opacity: 1; position: absolute; left: 0px; top: 0px; width: 1653px; height: 204px;"></div><div id="OpenLayers_Layer_WMS_26" dir="ltr" class="olLayerDiv olLayerGridSingleTile" style="position: absolute; width: 100%; height: 100%; z-index: 390; display: block;"><img class="olTileImage" src="https://srss-ows-2.landgate.wa.gov.au/mapproxy/myfirewatch/service?LAYERS=layer7_fhs_last_0_72.shp&amp;TRANSPARENT=TRUE&amp;MAXEXTENT=-20037508.34%2C-20037508.34%2C20037508.34%2C20037508.34&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;STYLES=&amp;FORMAT=image%2Fpng&amp;SRS=EPSG%3A900913&amp;BBOX=6762257.4047802,-4308345.3411523,22935109.59522,-2312421.6588477&amp;WIDTH=1653&amp;HEIGHT=204" style="visibility: inherit; opacity: 1; position: absolute; left: 0px; top: 0px; width: 1653px; height: 204px;"></div><div id="chicken" class="olPopup" style="position: absolute; overflow: hidden; left: 583px; top: -37px; width: 370px; height: 223px; z-index: 751; display: none;"><div id="chicken_GroupDiv" style="position: absolute; overflow: hidden; top: 0px; left: 0px; height: 100%; width: 100%;"><div id="chicken_contentDiv" class="olFramedCloudPopupContent" style="width: 322px; height: 164px; position: absolute; z-index: 1; left: 8px; top: 9px;"><table><tbody><tr><td>Time last detected</td><td>19:24 WST</td></tr><tr><td>Date last detected</td><td>29/07/2021</td></tr><tr><td>Longitude</td><td>117.525</td></tr><tr><td>Latitude</td><td>-34.265</td></tr><tr><td colspan="2">View <a href="alerts.html">current alerts</a> in your state or territory.</td></tr></tbody></table></div><div id="chicken_close" class="olPopupCloseBox" style="width: 17px; height: 17px; position: absolute; right: 13px; top: 14px; z-index: 1;"></div><div id="chicken_FrameDecorationDiv_0" style="position: absolute; overflow: hidden; width: 348px; height: 172px; inset: 0px 22px 51px 0px;"><img id="chicken_FrameDecorationImg_0" src="common/openlayers/img/cloud-popup-relative.png" style="width: 1276px; height: 736px; position: absolute; left: 0px; top: 0px;"></div><div id="chicken_FrameDecorationDiv_1" style="position: absolute; overflow: hidden; width: 22px; height: 173px; bottom: 50px; right: 0px; top: 0px;"><img id="chicken_FrameDecorationImg_1" src="common/openlayers/img/cloud-popup-relative.png" style="width: 1276px; height: 736px; position: absolute; left: -1238px; top: 0px;"></div><div id="chicken_FrameDecorationDiv_2" style="position: absolute; overflow: hidden; width: 348px; height: 19px; left: 0px; bottom: 32px; right: 22px;"><img id="chicken_FrameDecorationImg_2" src="common/openlayers/img/cloud-popup-relative.png" style="width: 1276px; height: 736px; position: absolute; left: 0px; top: -631px;"></div><div id="chicken_FrameDecorationDiv_3" style="position: absolute; overflow: hidden; width: 22px; height: 19px; bottom: 32px; right: 0px;"><img id="chicken_FrameDecorationImg_3" src="common/openlayers/img/cloud-popup-relative.png" style="width: 1276px; height: 736px; position: absolute; left: -1238px; top: -631px;"></div><div id="chicken_FrameDecorationDiv_4" style="position: absolute; overflow: hidden; width: 81px; height: 35px; left: 0px; bottom: 0px;"><img id="chicken_FrameDecorationImg_4" src="common/openlayers/img/cloud-popup-relative.png" style="width: 1276px; height: 736px; position: absolute; left: -215px; top: -687px;"></div></div></div></div><div id="OpenLayers_Control_Attribution_3" class="olControlAttribution olControlNoSelect" unselectable="on" style="position: absolute; z-index: 1003;"></div><div id="OpenLayers_Control_Zoom_4" class="olControlZoom olControlNoSelect" unselectable="on" style="position: absolute; z-index: 1003;"></div><div id="OpenLayers_Control_ScaleLine_18" class="olControlScaleLine olControlNoSelect" unselectable="on" style="position: absolute; z-index: 1004;"><div class="olControlScaleLineTop" style="visibility: visible; width: 51px;">500 km</div><div class="olControlScaleLineBottom" style="visibility: hidden;"></div></div><div id="OpenLayers_Control_WMSGetFeatureInfo_19" class="olControlWMSGetFeatureInfo olControlNoSelect" unselectable="on" style="position: absolute; z-index: 1005;"></div><div id="OpenLayers_Control_MousePosition_21" class="olControlMousePosition olControlNoSelect" unselectable="on" style="position: absolute; z-index: 1006;">Latitude: -22.5, Longitude: 108.9</div><div id="OpenLayers_Layer_Google_22" dir="ltr" class="olLayerDiv" style="position: absolute; width: 100%; height: 100%; z-index: 100;"></div><div id="OpenLayers_Layer_Google_22_EventPane" style="position: absolute; z-index: 101; width: 100%; height: 100%;"></div><div id="OpenLayers_Layer_Google_24" dir="ltr" class="olLayerDiv" style="position: absolute; width: 100%; height: 100%; z-index: 105; display: none;"></div><div id="OpenLayers_Layer_Google_24_EventPane" style="position: absolute; z-index: 106; width: 100%; height: 100%; display: none;"></div></div></div></div><div></div><div></div><div></div><div><button draggable="false" title="Toggle fullscreen view" aria-label="Toggle fullscreen view" type="button" class="gm-control-active gm-fullscreen-control" style="background: none rgb(255, 255, 255); border: 0px; margin: 10px; padding: 0px; text-transform: none; appearance: none; position: absolute; cursor: pointer; user-select: none; border-radius: 2px; height: 40px; width: 40px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; overflow: hidden; display: none; top: 0px; right: 0px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E" alt="" style="height: 18px; width: 18px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E" alt="" style="height: 18px; width: 18px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23111%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E" alt="" style="height: 18px; width: 18px;"></button></div><div></div><div></div><div></div><div></div><div></div><div><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" rel="noopener" href="https://maps.google.com/maps?ll=-28.485976,133.387993&amp;z=4&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3" title="Open this area in Google Maps (opens a new window)" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 66px; height: 26px; cursor: pointer;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div></div><div></div><div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 71px; bottom: 0px; width: 150px;"><div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><button draggable="false" title="Map Data" aria-label="Map Data" type="button" style="background: none; display: none; border: 0px; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; color: rgb(0, 0, 0); font-family: inherit;">Map Data</button><span>Map data ©2021 Google, INEGI</span></div></div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" rel="noopener" style="text-decoration: none; cursor: pointer; color: rgb(0, 0, 0);">Terms of Use</a></div></div><div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px; display: none; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_blank" rel="noopener" title="Report errors in the road map or imagery to Google" dir="ltr" href="https://www.google.com/maps/@-28.4859755,133.3879934,4z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); text-decoration: none; position: relative;">Report a map error</a></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(0, 0, 0); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2021 Google, INEGI</div></div></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-sizing: border-box; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 300px; height: 180px; position: absolute; left: 677px; top: 12px;"><div style="padding: 0px 0px 10px; font-size: 16px; box-sizing: border-box;">Map Data</div><div style="font-size: 13px;">Map data ©2021 Google, INEGI</div><button draggable="false" title="Close" aria-label="Close" type="button" class="gm-ui-hover-effect" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: absolute; cursor: pointer; user-select: none; top: 0px; right: 0px; width: 37px; height: 37px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M19%206.41L17.59%205%2012%2010.59%206.41%205%205%206.41%2010.59%2012%205%2017.59%206.41%2019%2012%2013.41%2017.59%2019%2019%2017.59%2013.41%2012z%22/%3E%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22/%3E%3C/svg%3E" alt="" style="pointer-events: none; display: block; width: 13px; height: 13px; margin: 12px;"></button></div></div></div></div></div>
+
+  </div>
+
+    <div id="search" style="top: 85px; right: 0px; left: auto;">
+      <input type="text" name="searchbox" id="searchbox" value="Search by town, address or latitude, longitude" title="Press Enter to search">
+      <input type="submit" value=" " id="submit" title="Press to search by location">
+    </div>
+
+    <div id="nav" style="height: 171px;">
+     <div class="menu_holder">
+      <ul>
+        <li><strong class="first">Hotspots Detected</strong>
+          <ul>
+            <li>
+              <label for="chklayerall" id="fire" class="bold" title="Press to switch layer on or off">0-72 hours ago<span class="checkedit"></span></label>
+              <input type="checkbox" id="chklayerall" name="chklayerall" checked="checked" title="Press to switch layer on or off">
+            </li>
+            <li>
+              <label for="chklayer" id="fire1" title="Press to switch layer on or off" class="bold">0-12 hours ago<span class="checkedit"></span>
+                <input type="checkbox" id="chklayer" name="chklayer" checked="checked" title="Press to switch layer on or off">
+            </label></li>
+            <li>
+              <label for="chklayer1" id="fire2" title="Press to switch layer on or off" class="bold">12-24 hours ago<span class="checkedit"></span></label>
+              <input type="checkbox" id="chklayer1" name="chklayer1">
+            </li>
+            <li>
+              <label for="chklayer2" id="fire3" title="Press to switch layer on or off" class="bold">24-48 hours ago<span class="checkedit"></span></label>
+              <input type="checkbox" id="chklayer2" name="chklayer2">
+            </li>
+            <li>
+              <label for="chklayer3" id="fire4" title="Press to switch layer on or off" class="bold">48-72 hours ago<span class="checkedit"></span></label>
+              <input type="checkbox" id="chklayer3" name="chklayer3">
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li class="first"><strong>Map options</strong>
+          <ul>
+            <li>
+              <label for="chksatellite" id="satellite1" title="Press to switch layer on or off" class="">Satellite view<span class=""></span></label>
+              <input type="checkbox" id="chksatellite" name="chksatellite">
+            </li>
+            <li>
+              <label for="chkgreen" id="green" title="Press to switch layer on or off" class="">Greenness (vegetation)<span class=""></span></label>
+              <input type="checkbox" id="chkgreen" name="chkgreen">
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li class="first"><strong>Burnt areas</strong>
+          <ul>
+            <li id="current_burnt">
+            	<label for="chkburnt1" id="burnt1" title="Press to switch layer on or off">This year<span></span></label>
+                <input type="checkbox" id="chkburnt1" name="chkburnt1">
+            </li>
+            <li>
+               <label for="chkburnt2" id="burnt2" title="Press to switch layer on or off">Last year<span></span></label>
+               <input type="checkbox" id="chkburnt2" name="chkburnt2">
+            </li>
+            <li>
+               <label for="chkburnt3" id="burnt3" title="Press to switch layer on or off">Two years ago<span></span></label>
+               <input type="checkbox" id="chkburnt3" name="chkburnt3">
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li class="first"><strong>Lightning activity</strong>
+          <ul>
+            <li>
+              <label for="chklight1" id="lightning1" title="Press to switch layer on or off">Last 24 hours<span></span></label>
+              <input type="checkbox" id="chklight1" name="chklight1">
+            </li>
+            <li>
+              <label for="chklight2" id="lightning2" title="Press to switch layer on or off">24-48 hours<span></span></label>
+              <input type="checkbox" id="chklight2" name="chklight2">
+            </li>
+            <li>
+              <label for="chklight3" id="lightning3" title="Press to switch layer on or off">48-72 hours<span></span></label>
+              <input type="checkbox" id="chklight3" name="chklight3">
+            </li>
+          </ul>
+        </li>
+      </ul>
+     </div> <!-- End of menu_holder"-->
+      <!--<a target="_blank" href="https://areyouready.wa.gov.au/"><div id="areyouready_logo"></div></a>-->
+    </div>
+
+</div>
+<a href="#" id="mob-layers" data-dropdown="#layer-menu"></a>
+
+<ul id="layer-menu" class="dropdown dropdown-tip dropdown-anchor-right" style="top: -9999em;">
+
+  <li>
+    <strong class="first white">Hotspots Detected</strong>
+  </li>
+
+  <li>
+    <label for="mobchk1" id="moblabel1" class="selected">0-72 hours<span class="checkedit"></span>
+    <input type="checkbox" id="mobchk1" name="mobchk1" checked="checked"></label>
+  </li>
+  <li>
+    <label for="mobchk11" id="moblabel11" class="selected">0-12 hours ago<span class="checkedit"></span>
+    <input type="checkbox" id="mobchk11" name="mobchk11"></label>
+  </li>
+  <li>
+    <label for="mobchk12" id="moblabel12" class="selected">12-24 hours ago<span class="checkedit"></span>
+    <input type="checkbox" id="mobchk12" name="mobchk12"></label>
+  </li>
+  <li>
+    <label for="mobchk13" id="moblabel13" class="selected">24-48 hours ago<span class="checkedit"></span>
+    <input type="checkbox" id="mobchk13" name="mobchk13"></label>
+  </li>
+  <li>
+    <label for="mobchk14" id="moblabel14" class="selected">48-72 hours ago<span class="checkedit"></span>
+    <input type="checkbox" id="mobchk14" name="mobchk14"></label>
+  </li>
+
+  <li>
+    <strong class="first white">Map Options</strong>
+  </li>
+
+  <li>
+    <label for="mobchk2" id="moblabel2" class="">Satellite view<span class=""></span>
+    <input type="checkbox" id="mobchk2" name="mobchk2"></label>
+  </li>
+  <li>
+    <label for="mobchk6" id="moblabel6" class="">Greenness (vegetation)<span class=""></span>
+    <input type="checkbox" id="mobchk6" name="mobchk6"></label>
+  </li>
+
+  <li>
+    <strong class="first white">Burnt Areas</strong>
+  </li>
+
+  <li id="mobcurrent_burnt">
+    <label for="mobchk4" id="moblabel4">This year<span></span>
+    <input type="checkbox" id="mobchk4" name="mobchk4"></label>
+  </li>
+  <li id="mobcurrent_last_year">
+    <label for="mobchk41" id="moblabel41">Last year<span></span>
+    <input type="checkbox" id="mobchk41" name="mobchk41"></label>
+  </li>
+  <li id="mobcurrent_two_years_ago">
+    <label for="mobchk42" id="moblabel42">Two year ago<span></span>
+    <input type="checkbox" id="mobchk42" name="mobchk42"></label>
+  </li>
+
+  <li>
+    <strong class="first white">Lightning</strong>
+  </li>
+
+  <li>
+    <label for="mobchk5" id="moblabel5">Last 24 hours<span></span>
+    <input type="checkbox" id="mobchk5" name="mobchk5"></label>
+  </li>
+  <li>
+    <label for="mobchk51" id="moblabel51">24-48 hours<span></span>
+    <input type="checkbox" id="mobchk51" name="mobchk51"></label>
+  </li>
+  <li>
+    <label for="mobchk52" id="moblabel52">48-72 hours<span></span>
+    <input type="checkbox" id="mobchk52" name="mobchk52"></label>
+  </li>
+
+  <li><a href="about.html" id="mob-about"><span>About</span></a></li>
+  <li><a href="alerts.html" id="mob-alerts"><span>Incidents &amp; Warnings</span></a></li>
+  <li><a href="terms.html" id="mob-terms"><span>Terms &amp; Conditions</span></a></li>
+  <li><a href="help.html" id="mob-help"><span>How to use MyFirewatch</span></a></li>
+  <li><a href="contact.html" id="mob-contact"><span>Contact</span></a></li>
+</ul>
+
+
+<a href="#" id="mob-search"></a>
+
+<div id="load" style="display: none;">
+</div>
+<div id="warning_modal" data-modal="#warning_modal">
+  Alert 1: 21st May, 2016 to 23rd May, 2016<br>
+  Due to technical problems, we are not currently receiving MODIS or NOAA data from Murdoch University. Consequently, there may be less hotspots detected than usual.
+  <div class="warning_close">x</div>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-48135040-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-48135040-1');
+</script>
+
+<script src="//maps.googleapis.com/maps/api/js?client=gme-landgate"></script>
+<script src="common/jquery/jquery-3.4.1.min.js"></script>
+<script src="common/tracking.js"></script>
+<script src="common/openlayers/OpenLayers.2.13.2.full.js"></script>
+<script src="common/jquery.dropdown.js"></script>
+<script src="common/jquery.leanModal.js"></script>
+<script src="common/olmap.js"></script>
+<script src="common/common.js"></script>
+
+<script>
+  if (!canViewMap()) {
+    window.location.href="index.html"
+  }
+</script>
+
+
+
+</body></html>
