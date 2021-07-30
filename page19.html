@@ -48,17 +48,45 @@ var openstreetmapOsm = L.tileLayer(
   maxZoom: 40
 })
 
+
+
+
+
+
+//50 communities
+
+var Communities50 = L.layerGroup();
+
+
+L.marker([-25.8135, 152.6173]).bindPopup('Bauple').addTo(Communities50);
+
+
+
+
 //Base layers definition and addition
 var allOptions = {
 	"Open streetmap": openstreetmap,
   "Open streetmap: Hot": openstreetmapHot,
-  "Open streetmap: Osm": openstreetmapOsm
+  "Open streetmap: Osm": openstreetmapOsm,
+  "50 Communities":Communities50
 };
 
 // Initialize with openstreetmap
 openstreetmap.addTo(map);
 
+
+
+
 // Add baseLayers to map as control layers
 L.control.layers(allOptions).addTo(map);
+
+
+
+
+
+
+
+
+
 
 </script>
