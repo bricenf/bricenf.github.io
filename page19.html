@@ -60,6 +60,16 @@ var Communities50 = L.layerGroup();
 var SizeOfBubble = 9000;
 var ColorOfBubble = 'blue';
 
+L.circle.bindPopup("Popup content");
+
+L.circle.on('mouseover', function (e) {
+  this.openPopup();
+});
+L.circle.on('mouseout', function (e) {
+  this.closePopup();
+
+});
+
 
 L.circle([-25.8135, 152.6173], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Bauple').addTo(Communities50);
 L.circle([-42.7498, 147.2655], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Herdsmans Cove').addTo(Communities50);
@@ -119,15 +129,7 @@ L.circle([-27.6075, 152.7766], SizeOfBubble,{color: ColorOfBubble, fillColor: Co
 
 
 
-circle.bindPopup("Popup content");
 
-circle.on('mouseover', function (e) {
-  this.openPopup();
-});
-circle.on('mouseout', function (e) {
-  this.closePopup();
-
-});
 
 
 //Base layers definition and addition
