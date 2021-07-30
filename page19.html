@@ -55,6 +55,16 @@ var openstreetmapOsm = L.tileLayer(
 
 //50 communities
 
+var WildFires2019 = L.layerGroup();
+
+var SizeOfBubbleForWildfire = 9000;
+var ColorOfBubbleForWildfire = 'red'
+
+L.circle([-13.9873, 127.3882], SizeOfBubbleForWildfire ,{ color: ColorOfBubbleForWildfire, fillColor: ColorOfBubbleForWildfire}).addTo(WildFires2019);
+L.circle([-13.9916, 127.4121], SizeOfBubbleForWildfire ,{ color: ColorOfBubbleForWildfire, fillColor: ColorOfBubbleForWildfire}).addTo(WildFires2019);
+L.circle([-14.0055, 127.4097], SizeOfBubbleForWildfire ,{ color: ColorOfBubbleForWildfire, fillColor: ColorOfBubbleForWildfire}).addTo(WildFires2019);
+
+
 var Communities50 = L.layerGroup();
 
 var SizeOfBubble = 9000;
@@ -131,7 +141,8 @@ var allOptions = {
 };
 
 var overlays = {
-  "50 Communities":Communities50
+  "50 Communities":Communities50,
+  "2019 Bushfire": WildFires2019
 }
 
 // Initialize with openstreetmap
