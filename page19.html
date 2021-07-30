@@ -25,27 +25,27 @@
 // mapid is the id of the div where the map will appear
 var map = L
   .map('mapid')
-  .setView([25.2744, 133.7751], 4);
+  .setView([25.2744, 133.7751], 7);
 
 // Tile type: openstreetmap normal
 var openstreetmap = L.tileLayer(
   'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
-  maxZoom: 6
+  maxZoom: 40
 })
 
 // Tile type: openstreetmap Hot
 var openstreetmapHot = L.tileLayer(
   'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
-  maxZoom: 6
+  maxZoom: 40
 })
 
 // Tile type: openstreetmap Osm
 var openstreetmapOsm = L.tileLayer(
   'http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
-  maxZoom: 6
+  maxZoom: 40
 })
 
 //Base layers definition and addition
