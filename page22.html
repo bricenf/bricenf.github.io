@@ -66,10 +66,11 @@ var ColorOfBubbleForWildfire = 'red'
 
 var myRenderer = L.canvas({ padding: 0.5 });
 
-L.circleMarker([-30.623, 148.2887], {renderer: myRenderer,color: ColorOfBubbleForWildfire}).addTo(WildFires2019);
+//L.circleMarker([-30.623, 148.2887], {renderer: myRenderer,color: ColorOfBubbleForWildfire}).addTo(WildFires2019);
 
 
 //L.circle([-30.623, 148.2887], SizeOfBubbleForWildfire ,{ color: ColorOfBubbleForWildfire, fillColor: ColorOfBubbleForWildfire}).addTo(WildFires2019);
+L.circle([-30.623, 148.2887], SizeOfBubbleForWildfire ,{renderer: myRenderer,color: ColorOfBubbleForWildfire, fillColor: ColorOfBubbleForWildfire}).addTo(WildFires2019);
 
 
 
