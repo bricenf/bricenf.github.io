@@ -67,9 +67,12 @@ L.marker([-25.8135, 152.6173]).bindPopup('Bauple').addTo(Communities50);
 var allOptions = {
 	"Open streetmap": openstreetmap,
   "Open streetmap: Hot": openstreetmapHot,
-  "Open streetmap: Osm": openstreetmapOsm,
-  "50 Communities":Communities50
+  "Open streetmap: Osm": openstreetmapOsm
 };
+
+var overlays = {
+  "50 Communities":Communities50
+}
 
 // Initialize with openstreetmap
 openstreetmap.addTo(map);
@@ -78,7 +81,7 @@ openstreetmap.addTo(map);
 
 
 // Add baseLayers to map as control layers
-L.control.layers(allOptions).addTo(map);
+L.control.layers(baseLayers, overlays).addTo(map);
 
 
 
