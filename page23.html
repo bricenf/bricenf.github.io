@@ -1,3 +1,181 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ebb9965e3042ce81f55aad5b5db50266075c7093106d92dd5c2973b26ffe99ab
-size 10120
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+<!-- Load Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+
+<!-- Create an element where the map will take place -->
+
+<div id="mapid"></div>
+
+<style>
+#mapid { height: 900px; }
+
+</style>
+
+
+
+<script>
+
+//Style is #mapid { height: 400px; }
+
+// Initialize the map
+// [25.2744, 133.7751] are the latitude and longitude
+// 4 is the zoom
+// mapid is the id of the div where the map will appear
+var map = L.map('mapid').setView([-25.2744,133.7751,], 5);
+
+
+
+
+// Tile type: openstreetmap normal
+var openstreetmap = L.tileLayer(
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+  maxZoom: 40
+})
+
+// Tile type: openstreetmap Hot
+var openstreetmapHot = L.tileLayer(
+  'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+  maxZoom: 40
+})
+
+// Tile type: openstreetmap Osm
+var openstreetmapOsm = L.tileLayer(
+  'http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+  maxZoom: 40
+})
+
+
+
+//50 communities
+
+var WildFires2019 = L.layerGroup();
+
+
+
+var SizeOfBubbleForWildfire = 9000;
+var ColorOfBubbleForWildfire = 'red';
+
+
+
+
+var myRenderer = L.canvas({ padding: 0.5 });
+
+L.circleMarker ([-13.9873, 127.3882], SizeOfBubbleForWildfire ,{renderer: myRenderer,color: ColorOfBubbleForWildfire, fillColor: ColorOfBubbleForWildfire}).addTo(WildFires2019);
+L.circleMarker ([-13.9916, 127.4121], SizeOfBubbleForWildfire ,{renderer: myRenderer,color: ColorOfBubbleForWildfire, fillColor: ColorOfBubbleForWildfire}).addTo(WildFires2019);
+L.circleMarker ([-14.0055, 127.4097], SizeOfBubbleForWildfire ,{renderer: myRenderer,color: ColorOfBubbleForWildfire, fillColor: ColorOfBubbleForWildfire}).addTo(WildFires2019);
+
+
+
+
+
+
+
+
+var Communities50 = L.layerGroup();
+
+var SizeOfBubble = 9000;
+var ColorOfBubble = 'blue';
+
+
+
+L.circle([-25.8135, 152.6173], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Bauple').addTo(Communities50);
+L.circle([-42.7498, 147.2655], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Herdsmans Cove').addTo(Communities50);
+L.circle([-42.7466, 147.2712], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Gagebrook').addTo(Communities50);
+L.circle([-27.6049, 152.81], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Bundamba').addTo(Communities50);
+L.circle([-25.6113, 152.8718], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Maaroom').addTo(Communities50);
+L.circle([-27.5951, 152.8355], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Dinmore').addTo(Communities50);
+L.circle([-42.7466, 147.2712], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Gagebrook').addTo(Communities50);
+L.circle([-27.616, 152.7609], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Ipswich').addTo(Communities50);
+L.circle([-27.59, 152.737], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Brassall').addTo(Communities50);
+L.circle([-33.8232, 151.16], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Riverview').addTo(Communities50);
+
+
+L.circle([-27.6049, 152.81], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Bundamba').addTo(Communities50);
+L.circle([-33.8232, 151.16], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Riverview').addTo(Communities50);
+L.circle([-27.5951, 152.8355], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Dinmore').addTo(Communities50);
+L.circle([-27.6049, 152.81], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Bundamba').addTo(Communities50);
+L.circle([-25.6812, 152.8735], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Boonooroo, Tuan').addTo(Communities50);
+L.circle([-27.59, 152.737], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Brassall').addTo(Communities50);
+L.circle([-27.6131, 152.7926], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Booval').addTo(Communities50);
+L.circle([-27.59, 152.737], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Brassall').addTo(Communities50);
+L.circle([-27.59, 152.737], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Brassall').addTo(Communities50);
+L.circle([-33.8819, 151.1559], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Leichhardt').addTo(Communities50);
+
+L.circle([-18.121, 145.7914], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Murray Upper').addTo(Communities50);
+L.circle([-27.5951, 152.8355], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Dinmore').addTo(Communities50);
+L.circle([-27.6049, 152.81], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Bundamba').addTo(Communities50);
+L.circle([-27.5971, 152.7929], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('North Booval').addTo(Communities50);
+L.circle([-27.59, 152.737], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Brassall').addTo(Communities50);
+L.circle([-27.5971, 152.7929], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('North Booval').addTo(Communities50);
+L.circle([-31.1078, 152.8061], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Burnt Bridge').addTo(Communities50);
+L.circle([-42.7498, 147.2655], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Herdsmans Cove').addTo(Communities50);
+L.circle([-27.6049, 152.81], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Bundamba').addTo(Communities50);
+L.circle([-33.8232, 151.16], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Riverview').addTo(Communities50);
+
+L.circle([-17.3496, 146.0108], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Bramston Beach').addTo(Communities50);
+L.circle([-42.7348, 147.2363], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Bridgewater').addTo(Communities50);
+L.circle([-27.5971, 152.7929], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('North Booval').addTo(Communities50);
+L.circle([-42.7348, 147.2363], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Bridgewater').addTo(Communities50);
+L.circle([-17.3496, 146.0108], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Moore Park Beach').addTo(Communities50);
+L.circle([-27.59, 152.737], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Brassall').addTo(Communities50);
+L.circle([-27.6131, 152.7926], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Booval').addTo(Communities50);
+L.circle([-42.7498, 147.2655], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Herdsmans Cove').addTo(Communities50);
+L.circle([-26.1342, 151.7744], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Marshlands, Mondure, Silverleaf, Stonelands, Wooroonden (South Burnett').addTo(Communities50);
+L.circle([-24.8897, 152.3649], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Avenell Heights').addTo(Communities50);
+
+L.circle([-27.59, 152.737], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Brassall').addTo(Communities50);
+L.circle([-23.3853, 150.5083], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Depot Hill').addTo(Communities50);
+L.circle([-25.5376, 152.7019], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Maryborough').addTo(Communities50);
+L.circle([-24.8551, 152.3425], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Bundaberg North').addTo(Communities50);
+L.circle([-27.59, 152.737], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Brassall').addTo(Communities50);
+L.circle([-27.5939, 152.7624], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('North Ipswich').addTo(Communities50);
+L.circle([-27.6049, 152.81], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Bundamba').addTo(Communities50);
+L.circle([-33.7331, 150.9282], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Glenwood').addTo(Communities50);
+L.circle([-33.8345, 151.006], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('Granville').addTo(Communities50);
+L.circle([-27.6075, 152.7766], SizeOfBubble,{color: ColorOfBubble, fillColor: ColorOfBubble}).bindPopup('East Ipswich').addTo(Communities50);
+
+
+
+
+
+
+//Base layers definition and addition
+var allOptions = {
+	"Open streetmap": openstreetmap,
+  "Open streetmap: Hot": openstreetmapHot,
+  "Open streetmap: Osm": openstreetmapOsm
+};
+
+var overlays = {
+  "50 Communities":Communities50,
+  "2019 Bushfire": WildFires2019
+};
+
+// Initialize with openstreetmap
+openstreetmap.addTo(map);
+Communities50.addTo(map);
+
+
+
+// Add baseLayers to map as control layers
+L.control.layers(allOptions, overlays).addTo(map);
+
+//Add scale
+L.control.scale({position: 'topright'}).addTo(map);
+
+
+
+
+
+
+
+
+
+</script>
