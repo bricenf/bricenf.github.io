@@ -170,10 +170,8 @@ L.control.layers(allOptions, overlays).addTo(map);
 //Add scale
 L.control.scale({position: 'topright'}).addTo(map);
 
-var myMap = L.map('mapElementId', options);
-var measureControl = new L.Control.Measure(options);
+L.Control.measureControl({position: 'topright'}).addTo(map);
 
-measureControl.addTo(myMap);
 
 
 
