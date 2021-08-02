@@ -113,10 +113,10 @@ var markers = L.markerClusterGroup();
 for (var i = 0; i < addressPoints.length; i++) {
   var a = addressPoints[i];
   var marker = L.circle(new L.LatLng(a[0], a[1]));
-  markers.addTo(WildFires2019);
+  markers.addLayer(marker);
 }
 
-//map.addLayer(markers);
+map.addLayer(markers);
 
 
 
