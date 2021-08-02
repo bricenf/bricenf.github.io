@@ -100199,10 +100199,7 @@ var allOptions = {
 };
 
 var overlays = {
-  "50 Communities":Communities50
-};
-
-var wildfires = {
+  "50 Communities":Communities50,
   "2019 Bushfire":WildFires2019
 };
 
@@ -100213,7 +100210,7 @@ Communities50.addTo(map);
 
 
 // Add baseLayers to map as control layers
-L.control.layers(allOptions, overlays,wildfires).addTo(map);
+L.control.layers(allOptions, overlays).addTo(map);
 
 //Add scale
 L.control.scale({position: 'topright'}).addTo(map);
