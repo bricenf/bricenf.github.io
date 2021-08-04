@@ -23666,6 +23666,14 @@ L.circle([-27.6075, 152.7766], SizeOfBubble,{color: ColorOfBubble, fillColor: Co
 
 
 
+var Warburton = L.layerGroup();
+
+var SizeOfBubbleWarburton = 9000;
+var ColorOfBubbleWarburton = 'blue';
+
+
+
+L.circle([-25.8135, 152.6173], SizeOfBubbleWarburton,{color: ColorOfBubbleWarburton, fillColor: ColorOfBubbleWarburton}).bindPopup('Warburton').addTo(Warburton);
 
 
 //Base layers definition and addition
@@ -23676,6 +23684,7 @@ var allOptions = {
 };
 
 var overlays = {
+  "Warburton":Warburton,
   "50 Communities":Communities50,
   "2019 Bushfire":WildFires2019
 };
@@ -23688,6 +23697,7 @@ var overlays = {
 
 // Initialize with openstreetmap
 openstreetmap.addTo(map);
+Warburton.addTo(map)
 Communities50.addTo(map);
 WildFires2019.addTo(map);
 
