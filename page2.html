@@ -121,7 +121,12 @@ body {
     .domain([0, 1e7]);
 
 
-
+    const gData = ({
+      lat: 40.7128,
+      lng: 74.0060,
+      size: 900000,
+      color: 'green'
+    });
 
   const world = Globe()
     (document.getElementById('globeViz'))
@@ -135,6 +140,7 @@ body {
     .hexSideColor(d => weightColor(d.sumWeight))
     .hexBinMerge(true)
     .enablePointerInteraction(false); // performance improvement
+    .htmlElementsData(gData)
 
 
 
