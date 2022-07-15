@@ -52,7 +52,7 @@
 </style>
 
 <script>
-  function openCity(evt, cityName) {
+  function experiences(evt, experiencesName) {
     // Declare all variables
     var i, tabcontent, tablinks;
 
@@ -69,7 +69,7 @@
     }
 
     // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(experiencesName).style.display = "block";
     evt.currentTarget.className += " active";
   }
 </script>
@@ -78,22 +78,16 @@
 
 
 <div class="tab">
-  <button class="tablinks" onmouseover="openCity(event, 'London')">London</button>
-  <button class="tablinks" onmouseover="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onmouseover="openCity(event, 'Tokyo')">Tokyo</button>
+  <button class="tablinks" onmouseover="experiences(event, '2020')">2020</button>
+  <button class="tablinks" onmouseover="experiences(event, '2021')">2021</button>
 </div>
 
-<div id="London" class="tabcontent">
+<div id="2020" class="tabcontent">
   <h3>London</h3>
   <p>London is the capital city of England.</p>
 </div>
 
-<div id="Paris" class="tabcontent">
+<div id="2021" class="tabcontent">
   <h3>Paris</h3>
   <p>Paris is the capital of France.</p>
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
 </div>
