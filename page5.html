@@ -103,53 +103,48 @@ body {
   <h1>Welcome to the about page</h1>
 
 
-
-  <div id="globeViz"></div>
-
-<script>
-  const weightColor = d3.scaleSequentialSqrt(d3.interpolateYlOrRd)
-    .domain([0, 1e7]);
-
-
-  const world = Globe()
-    (document.getElementById('globeViz'))
-    .globeImageUrl('//unpkg.com/three-globe/example/img/earth-day.jpg')
-    .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-    .backgroundColor('rgba(0,0,0,0)')
-    .hexBinPointWeight('pop')
-    .hexAltitude(d => d.sumWeight * 6e-8)
-    .hexBinResolution(4)
-    .hexTopColor(d => weightColor(d.sumWeight))
-    .hexSideColor(d => weightColor(d.sumWeight))
-    .hexBinMerge(true)
-    .enablePointerInteraction(false); // performance improvement
+<main>
+  <section class = 'intro-text'>
+    <div class = 'container'>
+      <h1> A timeline of my experiences </h1>
 
 
 
-  // Add auto-rotation
-  world.controls().autoRotate = true;
-  world.controls().autoRotateSpeed = -0.3;
-</script>
+    </div>
+  </section>
+
+  <section class = 'timeline-section'>
+
+    <ul>
+      <li>
+        <div>
+        <time>2014</time> Social work on mentorship
+        </div>
+      </li>
+
+
+      <li>
+        <div>
+          <time>2020</time>FED Reserve Challenge
+        </div>
+      </li>
+
+      <li>
+        <div>
+          <time> 2021</time> Resilient Cities Catalyst
+        </div>
+      </li>
 
 
 
-</div>
+    </ul>
+    </section>
+    </main>
+    <script src = 'timeline.js'> </script>
+
+
+
+
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-]
