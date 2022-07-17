@@ -65,7 +65,7 @@ select:focus {
     padding: 2rem 0;
     text-align: center; }
   .tabs [class^="tab"] [type="radio"],
-  .tabs [class*="tab"] [type="radio"] {
+  .tabs [class*=" tab"] [type="radio"] {
     border-bottom: 1px solid rgba(239, 237, 239, 0.5);
     cursor: pointer;
     -webkit-appearance: none;
@@ -100,7 +100,7 @@ select:focus {
 
 
       .tabs .tab-1 {width: 25%; }
-      .tabs .tab-1 [type="radio"] + div {width: 400%;margin-left: 400%; }
+      .tabs .tab-1 [type="radio"] + div {width: 400%;position:absolute;left:0; }
       .tabs .tab-1 [type="radio"]:checked + div {margin-left: 0; }
       .tabs .tab-1:last-child [type="radio"] + div {margin-left: 100%; }
       .tabs .tab-1:last-child [type="radio"]:checked + div {margin-left: -100%; }
@@ -131,7 +131,7 @@ select:focus {
   <div class="tab-1">
     <label for="tab2">2021</label>
     <input id="tab2" name="tabs-one" type="radio">
-    <div style = "float:left;">
+    <div>
       <h4>2021</h4>
       <p>Quisque sit amet turpis leo. Maecenas sed dolor mi. Pellentesque varius elit in neque ornare commodo ac non tellus. Mauris id iaculis quam. Donec eu felis quam. Morbi tristique lorem eget iaculis consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean at tellus eget risus tempus ultrices. Nam condimentum nisi enim, scelerisque faucibus lectus sodales at.</p>
     </div>
@@ -140,7 +140,7 @@ select:focus {
   <div class="tab-1">
     <label for="tab3">2020</label>
     <input id="tab3" name="tabs-one" type="radio">
-    <div style = "float:left;">
+    <div>
       <h4>2020</h4>
       <p>2020 Quisque sit amet turpis leo. Maecenas sed dolor mi. Pellentesque varius elit in neque ornare commodo ac non te</p>
     </div>
@@ -149,7 +149,7 @@ select:focus {
   <div class="tab-1">
     <label for="tab4">2019</label>
     <input id="tab4" name="tabs-one" type="radio">
-    <div style = "float:left;">
+    <div>
       <h4>2019</h4>
       <p>2019 Quisque sit amet turpis leo. Maecenas sed dolor mi. Pellentesque varius elit in neque ornare commodo ac non te</p>
     </div>
