@@ -1,51 +1,33 @@
-<!-- https://dev.to/foundsiders/frontend-shorts-easily-rotate-the-element-on-scroll-with-javascript-1g4p -->
+<head>
+  <style> body { margin: 0; } </style>
 
+  <script src="//unpkg.com/globe.gl"></script>
+<!--  <script src="../../dist/globe.gl.js"></script>-->
+</head>
 
-<!-- index.html -->
-<!DOCTYPE html>
+<body>
+  <div id="globeViz"></div>
 
-<style>
-  body {
-      height: 3000px;
-  }
+  <script>
+    // Gen random data
+    const N = 300;
+    const gData = [...Array(N).keys()].map(() => ({
+      lat: (Math.random() - 0.5) * 180,
+      lng: (Math.random() - 0.5) * 360,
+      size: Math.random() / 3,
+      color: ['red', 'white', 'blue', 'green'][Math.round(Math.random() * 3)]
+    }));
 
-  .wrapper {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      position: fixed;
-  }
+    Globe()
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .pointsData(gData)
+      .pointAltitude('size')
+      .pointColor('color')
 
-  .circle {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: greenyellow;
-      text-align: center;
-      vertical-align: middle;
-      display: table-cell;
-  }
+      // Add auto-rotation
+      .controls().autoRotate = true;
+      .controls().autoRotateSpeed = -0.3;
+    (document.getElementById('globeViz'))
 
-  #reload {
-      width: 50px;
-      height: 50px;
-  }
-
-</style>
-
-
-
-<html>
-    <head>
-        ...
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <div class="wrapper">
-                <div class="circle">
-                    <img id="reload" src="reload-solid.svg" alt="scroll">
-                </div>
-        </div>
-        <script src="index.js"></script>
-    </body>
-</html>
+  </script>
+</body>
