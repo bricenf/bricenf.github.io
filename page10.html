@@ -84,11 +84,11 @@ select:focus {
     .tabs [class^="tab"] [type="radio"]:checked,
     .tabs [class*=" tab"] [type="radio"]:checked {
       border-bottom: 2px solid #fd264f; }
-    .tabs [class^="tab"] [type="radio"]:checked + div + div + div,
-    .tabs [class*=" tab"] [type="radio"]:checked + div + div + div {
+    .tabs [class^="tab"] [type="radio"]:checked + div,
+    .tabs [class*=" tab"] [type="radio"]:checked + div {
       opacity: 1; }
-    .tabs [class^="tab"] [type="radio"] + div + div + div,
-    .tabs [class*=" tab"] [type="radio"] + div + div + div {
+    .tabs [class^="tab"] [type="radio"] + div,
+    .tabs [class*=" tab"] [type="radio"] + div {
       display: block;
       opacity: 0;
       padding: 2rem 0;
@@ -100,14 +100,14 @@ select:focus {
 
     .tabs .tab-1 {
       width: 25%; }
-      .tabs .tab-1 [type="radio"] + div + div + div {
+      .tabs .tab-1 [type="radio"] + div {
         width: 400%;
         margin-left: 400%; }
-      .tabs .tab-1 [type="radio"]:checked + div + div + div {
+      .tabs .tab-1 [type="radio"]:checked + div {
         margin-left: 0; }
-      .tabs .tab-1:last-child [type="radio"] + div + div + div {
+      .tabs .tab-1:last-child [type="radio"] + div {
         margin-left: 100%; }
-      .tabs .tab-1:last-child [type="radio"]:checked + div + div + div {
+      .tabs .tab-1:last-child [type="radio"]:checked + div {
         margin-left: -100%; }
 
 
