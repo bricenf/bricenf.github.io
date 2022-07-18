@@ -88,8 +88,32 @@ body, html {
       .tabs .tab-1 {width: 25%; }
       .textcontent{display: block;position: absolute;left:80px;overflow: hidden;}
 
+
+      /* services section css */
+      .servicesText.card {
+          height: 280px;
+          cursor: pointer;
+        }
+      .servicesIcon {
+          font-size: 36px;
+          text-align: center;
+          width: 100%;
+      }
+      .card-title {
+          text-align: center;
+      }
+      .card:hover .servicesIcon {
+          color: #008000;
+      }
+      .servicesText:hover {
+          border: 1px solid #008000;
+      }
+
+
+
+
 #Home {background-color: red;}
 #About {background-color: green;}
 #Experiences {background-color: blue;}
-#Interests {background-color: orange;}
+#Skills {background-color: orange;}
 #Projects {background-color: red;}
