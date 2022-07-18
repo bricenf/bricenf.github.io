@@ -31,6 +31,8 @@ body, html {
 }
 
 #Home {background-color: red;}
-#News {background-color: green;}
+#About {background-color: green;}
+#Experiences {background-color: blue;}
+#Interests {background-color: orange;}
+#Projects {background-color: red;}
 #Contact {background-color: blue;}
-#About {background-color: orange;}
