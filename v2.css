@@ -1,6 +1,6 @@
 body {
   background: #191828;
-  color: #efedef;
+  color: #5c85d6;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 300;
@@ -11,10 +11,10 @@ body {
 h1 {
   font-size: 40px;
   line-height: 0.8em;
-  color: rgba(255,255,255,0.2);}
+  color: rgba(255,255,255,1.0);}
 
 .documentation {
-    color: #fd264f;
+    color: #5c85d6;
 }
 button:focus,
 input:focus,
@@ -34,7 +34,7 @@ select:focus {
   overflow: hidden; }
   .tabs [class^="tab"] label,
   .tabs [class*=" tab"] label {
-    color: #efedef;
+    color: #5c85d6;
     cursor: pointer;
     display: block;
     font-size: 1.1em;
@@ -44,7 +44,7 @@ select:focus {
     text-align: center; }
   .tabs [class^="tab"] [type="radio"],
   .tabs [class*=" tab"] [type="radio"] {
-    border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+    border-bottom: 1px solid rgba(239, 237, 239, 1.0);
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
