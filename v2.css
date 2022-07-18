@@ -100,10 +100,11 @@ select:focus {
 
 
       .textcontent{
-          display: block;
-          left:80px;
+        display: block;
+        position: absolute;
+        left:80px;
 
-          overflow: hidden;
+        overflow: hidden;
 
 
 
