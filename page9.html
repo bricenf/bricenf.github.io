@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="//unpkg.com/globe.gl"></script>
+<!--  <script src="../../dist/globe.gl.js"></script>-->
+</head>
+
+<body>
+  <div id="globeViz"></div>
+
+  <script>
+    // Gen random data
+    const N = 300;
+    const gData = [...Array(N).keys()].map(() => ({
+      lat: 26.461462,
+      lng: -80.072823,
+      size: 10,
+      color: 'blue'
+    }));
+
+    Globe()
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .pointsData(gData)
+      .pointAltitude('size')
+      .pointColor('color')
+
+      // Add auto-rotation
+
+    (document.getElementById('globeViz'))
+
+  </script>
+</body>
