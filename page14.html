@@ -105,9 +105,16 @@ select:focus {
       .textcontent{
         position: absolute;
         left:80px;
-        width:40%;
-        margin: 2rem auto 0;
-        padding: 300px;
+
+          display: block;
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: flex;
+          -webkit-flex-wrap: wrap;
+          -moz-flex-wrap: wrap;
+          flex-wrap: wrap;
+          margin: 0;
+          overflow: hidden;
 
 
       }
