@@ -192,8 +192,15 @@
 <div id="Projects" class="tabcontent">
   <h3>Projects</h3>
 
+  <div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('finance')"> Finance</button>
+  <button class="btn" onclick="filterSelection('programming')"> Programming</button>
+  <button class="btn" onclick="filterSelection('miscellaneous')"> Miscellaneous</button>
+</div>
+
   <body>
-
+    <div class="filterDiv finance">
     <section class="page-wrap">
 			<article id="block1" class="module-block">
 
@@ -207,7 +214,9 @@
 			</article>
     </section>
 
+  </div>
 
+    <div class="filterDiv programming">
     <section class="page-wrap">
 			<article id="block1" class="module-block">
 
@@ -220,8 +229,9 @@
 				</ul>
 			</article>
     </section>
+    <div class="filterDiv finance">
 
-      
+
 	</body>
 
 </div>
