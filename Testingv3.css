@@ -4,7 +4,7 @@ Projectscontainer {
 
 .filterDiv {
 float: left;
-width: 800px;
+width: auto;
 margin: 2px;
 display: none; /* Hidden by default */
 }
