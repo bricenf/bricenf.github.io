@@ -4,11 +4,8 @@ Projectscontainer {
 
 .filterDiv {
   float: left;
-  background-color: #2196F3;
-  color: #ffffff;
   line-height: 100px;
   text-align: center;
-  margin: 2px;
   display: none; /* Hidden by default */
 }
 
