@@ -44,7 +44,7 @@ var chart = root.container.children.push(
 chart.events.on("wheel", function(ev) {
   if (ev.originalEvent.ctrlKey) {
     ev.originalEvent.preventDefault();
-    chart.set("wheelY", "rotateY");
+    chart.set("wheelY", "rotateX");
   }
   else {
     chart.set("wheelY", "none");
