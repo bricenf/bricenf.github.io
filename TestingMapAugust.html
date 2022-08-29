@@ -36,7 +36,7 @@ root.setThemes([
 var chart = root.container.children.push(
   am5map.MapChart.new(root, {
     panX: "rotateX",
-    projection: am5map.geoNaturalEarth1(),
+    projection: am5map.geoOrthographic(),
     wheelY: "none"
   })
 );
@@ -113,28 +113,4 @@ chart.appear(1000, 100);
 
 <!-- HTML -->
 
-
-<body>
-  <h3> TESTING HEADER </h3>
-
-    <h3> TESTING HEADER </h3>
-
-      <h3> TESTING HEADER </h3>
-
-        <h3> TESTING HEADER </h3>
-
-          <h3> TESTING HEADER </h3>
-
-            <h3> TESTING HEADER </h3>
-
-              <h3> TESTING HEADER </h3>
-
-                <h3> TESTING HEADER </h3>
-
-                  <h3> TESTING HEADER </h3>
-
-                    <h3> TESTING HEADER </h3>
-
-                      <h3> TESTING HEADER </h3>
-  </body>
 <div id="chartdiv"></div>
