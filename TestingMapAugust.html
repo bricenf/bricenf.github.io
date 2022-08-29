@@ -32,8 +32,8 @@ root.setThemes([
 // Create the map chart
 // https://www.amcharts.com/docs/v5/charts/map-chart/
 var chart = root.container.children.push(am5map.MapChart.new(root, {
-  wheelX: "rotateX",
-  wheelY: "rotateY",
+  wheelY: "rotateX",
+  wheelX: "rotateY",
   projection: am5map.geoOrthographic(),
   paddingBottom: 20,
   paddingTop: 20,
@@ -89,7 +89,6 @@ chart.animate({
 
 
 // Make stuff animate on load
-chart.appear(1000, 100);
 
 }); // end am5.ready()
 </script>
