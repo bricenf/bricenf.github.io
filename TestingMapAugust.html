@@ -32,8 +32,7 @@ root.setThemes([
 // Create the map chart
 // https://www.amcharts.com/docs/v5/charts/map-chart/
 var chart = root.container.children.push(am5map.MapChart.new(root, {
-  wheelX: "rotateX",
-  wheelY: "rotateY",
+  wheelX: "rotateY",
   projection: am5map.geoOrthographic(),
   paddingBottom: 20,
   paddingTop: 20,
@@ -78,14 +77,6 @@ var graticuleSeries = chart.series.push(am5map.GraticuleSeries.new(root, {}));
 graticuleSeries.mapLines.template.setAll({ strokeOpacity: 0.1, stroke: root.interfaceColors.get("alternativeBackground") })
 
 
-// Rotate animation
-chart.animate({
-  key: "rotationX",
-  from: 0,
-  to: 360,
-  duration: 30000,
-  loops: Infinity
-});
 
 
 // Make stuff animate on load
