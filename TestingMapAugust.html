@@ -42,7 +42,7 @@ var chart = root.container.children.push(
 );
 
 chart.events.on("wheel", function(ev) {
-  if (ev.originalEvent.ctrlKey) {
+  if (ev.originalEvent.shiftKey) {
     ev.originalEvent.preventDefault();
     chart.set("wheelY", "rotateX");
   }
@@ -109,6 +109,10 @@ polygonSeries.mapPolygons.template.on("active", function (active, target) {
 chart.appear(1000, 100);
 
 }); // end am5.ready()
+
+
+
+
 </script>
 
 <!-- HTML -->
