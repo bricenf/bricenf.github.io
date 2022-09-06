@@ -86,7 +86,7 @@ body, html {
 
 
       .tabs .tab-1 {width: 25%; }
-      .textcontent{display: block;position: absolute;left:80px;overflow: hidden;color: #5c85d6;}
+      .textcontent{display: block;position: absolute;left:80px;overflow: hidden;}
 
 
       /* services section css */
