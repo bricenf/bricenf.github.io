@@ -405,27 +405,38 @@
 <div id="Projects" class="tabcontent">
   <h3>Projects</h3>
 
+<!--
   <div id="myBtnContainer">
   <button class="btn active" onclick="filterSelection('all')">Show all</button>
   <button class="btn" onclick="filterSelection('finance')">Finance</button>
   <button class="btn" onclick="filterSelection('programming')">Programming</button>
   <button class="btn" onclick="filterSelection('passion')">Passion Project</button>
 </div>
+-->
 
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+  <button class="btn" onclick="filterSelection('animals')"> Animals</button>
+  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+</div>
+
+<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
 <div class="container">
-  <div class="filterDiv finance">BMW</div>
-  <div class="filterDiv finance">Orange</div>
-  <div class="filterDiv programming">Volvo</div>
-  <div class="filterDiv passion">Red</div>
-  <div class="filterDiv finance passion">Mustang</div>
-  <div class="filterDiv finance">Blue</div>
-  <div class="filterDiv programming">Cat</div>
-  <div class="filterDiv programming">Dog</div>
-  <div class="filterDiv finance">Melon</div>
-  <div class="filterDiv finance passion">Kiwi</div>
-  <div class="filterDiv programming">Banana</div>
-  <div class="filterDiv programming">Lemon</div>
-  <div class="filterDiv finance">Cow</div>
+  <div class="filterDiv cars">BMW</div>
+  <div class="filterDiv colors fruits">Orange</div>
+  <div class="filterDiv cars">Volvo</div>
+  <div class="filterDiv colors">Red</div>
+  <div class="filterDiv cars animals">Mustang</div>
+  <div class="filterDiv colors">Blue</div>
+  <div class="filterDiv animals">Cat</div>
+  <div class="filterDiv animals">Dog</div>
+  <div class="filterDiv fruits">Melon</div>
+  <div class="filterDiv fruits animals">Kiwi</div>
+  <div class="filterDiv fruits">Banana</div>
+  <div class="filterDiv fruits">Lemon</div>
+  <div class="filterDiv animals">Cow</div>
 </div>
 
 <!--
