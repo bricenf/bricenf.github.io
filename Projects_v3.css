@@ -55,14 +55,20 @@
 }
 
 .nav a {
-	color:#565656;
-	display: block;
-	font-size:12px;
+	/*
+  color:#565656;
+  */
+  display: block;
+  /*
+  font-size:12px;
 	margin:5px 2px;
 	padding:10px 10px 8px;
-	text-transform:uppercase;
+  */
+  text-transform:uppercase;
+  /*
 	font-weight: bold;
 	letter-spacing: 1px;
+  */
 	border-right: 1px dashed rgba(0, 0, 0, .3);
 }
 
