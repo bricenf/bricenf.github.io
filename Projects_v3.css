@@ -40,21 +40,21 @@
   color: white;
 }
 
-nav {
+.nav {
 	float: right;
 	width: 40%;
 }
 
 
-nav ul { float: right; }
+.nav ul { float: right; }
 
-nav li {
+.nav li {
 	float: left;
 	list-style: none;
 	padding: 4px 0;
 }
 
-nav a {
+.nav a {
 	color:#565656;
 	display: block;
 	font-size:12px;
@@ -66,10 +66,10 @@ nav a {
 	border-right: 1px dashed rgba(0, 0, 0, .3);
 }
 
-nav li:last-child a { border-right: none; }
+.nav li:last-child a { border-right: none; }
 
 
-nav a:hover, nav a:focus {
+.nav a:hover, nav a:focus {
 	text-decoration:none;
 	background-color:#f0f0f0;
 	border-color: transparent;
