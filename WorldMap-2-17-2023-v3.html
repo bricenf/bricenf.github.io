@@ -1,190 +1,65 @@
-<!-- Styles -->
-<style>
-    #chartdiv {
-      width: 100%;
-      height: 500px;
-    }
-    </style>
-    
-    <!-- Resources -->
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-    
-    <!-- Chart code -->
-    <script>
-    am5.ready(function() {
-    
-    // Create root element
-    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-    var root = am5.Root.new("chartdiv");
-    
-    // Set themes
-    // https://www.amcharts.com/docs/v5/concepts/themes/
-    root.setThemes([
-      am5themes_Animated.new(root)
-    ]);
-    
-    // Create the map chart
-    // https://www.amcharts.com/docs/v5/charts/map-chart/
-    var chart = root.container.children.push(
-      am5map.MapChart.new(root, {
-        panX: "rotateX",
-        panY: "none",
-        projection: am5map.geoMercator(),    
-      })
-    );
-    
-    var cont = chart.children.push(
-      am5.Container.new(root, {
-        layout: root.horizontalLayout,
-        x: 20,
-        y: 40
-      })
-    );
-    
-    // Add labels and controls
-    cont.children.push(
-      am5.Label.new(root, {
-        centerY: am5.p50,
-        text: "Map"
-      })
-    );
-    
-    var switchButton = cont.children.push(
-      am5.Button.new(root, {
-        themeTags: ["switch"],
-        centerY: am5.p50,
-        icon: am5.Circle.new(root, {
-          themeTags: ["icon"]
-        })
-      })
-    );
-    
-    switchButton.on("active", function () {
-      if (!switchButton.get("active")) {
-        chart.set("projection", am5map.geoMercator());
-        chart.set("panY", "translateY");
-        chart.set("rotationY", 0);
-        
-        backgroundSeries.mapPolygons.template.set("fillOpacity", 0);
-      } else {
-        chart.set("projection", am5map.geoOrthographic());
-        chart.set("panY", "rotateY");
-        backgroundSeries.mapPolygons.template.set("fillOpacity", 0.1);
-      }
-    });
-    
-    cont.children.push(
-      am5.Label.new(root, {
-        centerY: am5.p50,
-        text: "Globe"
-      })
-    );
-    
-    // Create series for background fill
-    // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/#Background_polygon
-    var backgroundSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {}));
-    backgroundSeries.mapPolygons.template.setAll({
-      fill: root.interfaceColors.get("alternativeBackground"),
-      fillOpacity: 0,
-      strokeOpacity: 0
-    });
-    
-    // Add background polygon
-    // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/#Background_polygon
-    backgroundSeries.data.push({
-      geometry: am5map.getGeoRectangle(90, 180, -90, -180)
-    });
-    
-    // Create main polygon series for countries
-    // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
-    var polygonSeries = chart.series.push(
-      am5map.MapPolygonSeries.new(root, {
-        geoJSON: am5geodata_worldLow
-      })
-    );
-    
-    // Create line series for trajectory lines
-    // https://www.amcharts.com/docs/v5/charts/map-chart/map-line-series/
-    var lineSeries = chart.series.push(am5map.MapLineSeries.new(root, {}));
-    lineSeries.mapLines.template.setAll({
-      stroke: root.interfaceColors.get("alternativeBackground"),
-      strokeOpacity: 0.3
-    });
-    
-    // Create point series for markers
-    // https://www.amcharts.com/docs/v5/charts/map-chart/map-point-series/
-    var pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
-    
-    pointSeries.bullets.push(function () {
-      var circle = am5.Circle.new(root, {
-        radius: 4,
-        tooltipY: 0,
-        fill: am5.color(0xffba00),
-        stroke: root.interfaceColors.get("background"),
-        strokeWidth: 2,
-        tooltipText: "{title}"
-      });
-    
-      return am5.Bullet.new(root, {
-        sprite: circle
-      });
-    });
-    
-    var data = = [{
-  "id": "US",
-  "selected": true
-}, {
-  "id": "BR",
-  "selected": true
-}, {
-  "id": "AU",
-  "selected": true
-}, {
-  "id": "CN",
-  "selected": true
-}, {
-  "id": "FR",
-  "selected": true
-}];
-
-// Configure series
-var polygonTemplate = polygonSeries.mapPolygons.template;
-polygonTemplate.tooltipText = "{name}";
-polygonTemplate.fill = am4core.color("#74B266");
-
-// Create hover state and set alternative fill color
-var hs = polygonTemplate.states.create("hover");
-hs.properties.fill = am4core.color("#367B25");
-
-polygonTemplate.adapter.add("fill", function(fill, target) {
-  if (target.dataItem.dataContext && target.dataItem.dataContext.selected) {
-    var pattern = new am4core.LinePattern();
-    pattern.width = 10;
-    pattern.height = 10;
-    pattern.stroke = am4core.color("#367B25");
-    pattern.strokeWidth = 1;
-    pattern.rotation = 45;
-    return pattern;
-  }
-  return fill;
+<script src="https://www.amcharts.com/lib/3/ammap.js" type="text/javascript"></script>
+<script src="https://www.amcharts.com/lib/3/maps/js/worldHigh.js" type="text/javascript"></script>
+<script src="https://www.amcharts.com/lib/3/themes/dark.js" type="text/javascript"></script>
+<div id="mapdiv" style="width: 1000px; height: 450px;"></div>
+<div style="width: 1000px; font-size: 70%; padding: 5px 0; text-align: center; background-color: #535364; margin-top: 1px; color: #B4B4B7;"><a href="https://www.amcharts.com/visited_countries/" style="color: #B4B4B7;">Create your own visited countries map</a> or check out the <a href="https://www.amcharts.com/" style="color: #B4B4B7;">JavaScript Charts</a>.</div>
+<script type="text/javascript">
+var map = AmCharts.makeChart("mapdiv",{
+type: "map",
+theme: "dark",
+projection: "mercator",
+panEventsEnabled : true,
+backgroundColor : "#535364",
+backgroundAlpha : 1,
+zoomControl: {
+zoomControlEnabled : true
+},
+dataProvider : {
+map : "worldHigh",
+getAreasFromMap : true,
+areas :
+[
+	{
+		"id": "AX",
+		"showAsSelected": true
+	},
+	{
+		"id": "AL",
+		"showAsSelected": true
+	},
+	{
+		"id": "AD",
+		"showAsSelected": true
+	},
+	{
+		"id": "CY",
+		"showAsSelected": true
+	},
+	{
+		"id": "MT",
+		"showAsSelected": true
+	},
+	{
+		"id": "KN",
+		"showAsSelected": true
+	},
+	{
+		"id": "US",
+		"showAsSelected": true
+	}
+]
+},
+areasSettings : {
+autoZoom : true,
+color : "#B4B4B7",
+colorSolid : "#84ADE9",
+selectedColor : "#84ADE9",
+outlineColor : "#666666",
+rollOverColor : "#9EC2F7",
+rollOverOutlineColor : "#000000"
+}
 });
+</script>
 
-polygonTemplate.adapter.add("stroke", function(fill, target) {
-  if (target.dataItem.dataContext && target.dataItem.dataContext.selected) {
-    return am4core.color("#367B25");
-  }
-  return fill;
-});
-    
-    // Make stuff animate on load
-    chart.appear(1000, 100);
-    
-    
-    }); // end am5.ready()
-    </script>
-    
-    <!-- HTML -->
-    <div id="chartdiv"></div>
+<!-- HTML -->
+<div id="chartdiv"></div>
