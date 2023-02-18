@@ -72,6 +72,13 @@
       } else {
         chart.set("projection", am5map.geoOrthographic());
         chart.set("panY", "rotateY");
+        chart.animate({
+          key: "rotationX",
+          from: 0,
+          to: 360,
+          duration: 30000,
+          loops: Infinity
+        });
         backgroundSeries.mapPolygons.template.set("fillOpacity", 0.1);
       }
     });
