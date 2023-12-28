@@ -30,7 +30,50 @@
         // Creating a sphere (globe)
         var geometry = new THREE.SphereGeometry(5, 32, 32);
         var material = new THREE.MeshBasicMaterial({
-            map: new THREE.TextureLoader().load('world.jpg'), // You can replace 'world.jpg' with your own texture
+            map: new THREE.TextureLoader().load('https://threejsfundamentals.org/threejs/resources/images/wall.jpg'),
         });
         var globe = new THREE.Mesh(geometry, material);
-        scene.
+        scene.add(globe);
+
+        // Adding countries as markers on the globe
+        visitedCountries.forEach(country => {
+            var markerGeometry = new THREE.SphereGeometry(0.2, 16, 16);
+            var markerMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+            var marker = new THREE.Mesh(markerGeometry, markerMaterial);
+
+            // For simplicity, use random values as an example
+            var latitude = Math.random() * 180 - 90;
+            var longitude = Math.random() * 360 - 180;
+
+            // Convert latitude and longitude to spherical coordinates
+            var phi = (90 - latitude) * (Math.PI / 180);
+            var theta = (180 - longitude) * (Math.PI / 180);
+
+            // Position the marker on the globe
+            marker.position.x = 5 * Math.sin(phi) * Math.cos(theta);
+            marker.position.y = 5 * Math.cos(phi);
+            marker.position.z = 5 * Math.sin(phi) * Math.sin(theta);
+
+            // Add the marker to the scene
+            scene.add(marker);
+        });
+
+        // Set camera position
+        camera.position.z = 15;
+
+        // Render the scene
+        var animate = function () {
+            requestAnimationFrame(animate);
+
+            // Rotate the globe
+            globe.rotation.y += 0.005;
+
+            renderer.render(scene, camera);
+        };
+
+        animate();
+    </script>
+
+</body>
+
+</html>
