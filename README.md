@@ -2,9 +2,10 @@
  
 # Data Science
 ### Education
-Statistics and Quantiative Modeling 
+BBA Statistics and Quantiative Modeling (minor: Political Science)
 
 ### Fellowships
+Watson
 
 ### Work Experience
 
