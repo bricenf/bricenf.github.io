@@ -10,7 +10,7 @@ Obama-Chesky Voyager Scholar, Obama Foundation
 NYC DOT, Institute for Economics and Peace, World Resources Institute, CUNY Institute for Demographic Research
 
 ### Projects
-Utilizing NYC MTA transit data overlayed with FEMA and emergency management zone flooding, we can map subway stations that are exposed to climate extremities. 
+Utilizing NYC MTA transit data overlayed with FEMA and emergency management zone flooding, we can map subway stations that are exposed to climate extremities. The darker the blue column is, the more vulnerable that area is.
 
 <br>
 
