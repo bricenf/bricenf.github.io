@@ -1,10 +1,10 @@
  # Data Science
 ### Education
-City University of New York, Baruch College
+City University of New York, Baruch College <br>
 BBA Statistics and Quantiative Modeling (Minor: Political Science)
 
 ### Fellowships
-Jeannette K. Watson Fellow, Watson Foundation
+Jeannette K. Watson Fellow, Watson Foundation <br> 
 Obama-Chesky Voyager Scholar, Obama Foundation
 
 ### Work Experience
