@@ -1,4 +1,4 @@
- # Data Science
+# Data Science
 ### Education
 City University of New York, Baruch College <br>
 BBA Statistics and Quantiative Modeling (Minor: Political Science)
